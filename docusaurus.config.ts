@@ -5,6 +5,19 @@ import type * as Preset from '@docusaurus/preset-classic';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
+  plugins: [
+    async function myTailwindPlugin(context, options) {
+      return {
+        name: 'docusaurus-tailwindcss',
+        configurePostCss(postcssOptions) {
+          postcssOptions.plugins.push(require('@tailwindcss/postcss'));
+          postcssOptions.plugins.push(require('autoprefixer'));
+          return postcssOptions;
+        },
+      };
+    },
+  ],
+
   title: 'Garden',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
@@ -136,18 +149,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
       defaultLanguage: 'tsx',
     },
-    plugins: [
-      async function myPlugin(context, options) {
-        return {
-          name: 'docusaurus-tailwindcss',
-          configurePostCss(postcssOptions) {
-            postcssOptions.plugins.push(require('tailwindcss'));
-            postcssOptions.plugins.push(require('autoprefixer'));
-            return postcssOptions;
-          },
-        };
-      },
-    ],
   } satisfies Preset.ThemeConfig,
 };
 
