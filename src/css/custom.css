@@ -1,39 +1,35 @@
 @import 'tailwindcss';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@layer theme {
+  :root {
+    /* Primary colors */
+    --color-primary: #2e8555;
+    --color-primary-dark: #29784c;
+    --color-primary-darker: #277148;
+    --color-primary-darkest: #205d3b;
+    --color-primary-light: #33925d;
+    --color-primary-lighter: #359962;
+    --color-primary-lightest: #3cad6e;
 
-/* You can override the default Infima variables here. */
-:root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    /* Other variables */
+    --code-font-size: 95%;
+    --highlighted-code-line-bg: color-mix(in srgb, black 10%, transparent);
+  }
+
+  [data-theme='dark'] {
+    --color-primary: #25c2a0;
+    --color-primary-dark: #21af90;
+    --color-primary-darker: #1fa588;
+    --color-primary-darkest: #1a8870;
+    --color-primary-light: #29d5b0;
+    --color-primary-lighter: #32d8b4;
+    --color-primary-lightest: #4fddbf;
+    --highlighted-code-line-bg: color-mix(in srgb, black 30%, transparent);
+  }
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-html {
-  scroll-behavior: smooth;
+@layer utilities {
+  .scroll-smooth {
+    scroll-behavior: smooth;
+  }
 }
