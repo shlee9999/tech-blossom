@@ -18,8 +18,8 @@ const config: Config = {
     },
   ],
 
-  title: 'Garden',
-  tagline: 'Dinosaurs are cool',
+  title: "Seonghoon's Tech Blossom",
+  tagline: '',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -31,7 +31,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  projectName: 'tech-blossom', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -52,7 +52,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/shlee9999/sh-garden',
+          editUrl: 'https://github.com/shlee9999/seonghoon-tech-blossom',
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +62,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/shlee9999/sh-garden',
+          editUrl: 'https://github.com/shlee9999/seonghoon-tech-blossom',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -79,9 +79,9 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Garden',
+      title: "Seonghoon's Tech Blossom",
       logo: {
-        alt: 'Garden Logo',
+        alt: "Seonghoon's Tech Blossom",
         src: 'img/logo.svg',
       },
       items: [
@@ -93,7 +93,7 @@ const config: Config = {
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/shlee9999/sh-garden',
+          href: 'https://github.com/shlee9999/seonghoon-tech-blossom',
           label: 'GitHub',
           position: 'right',
         },
