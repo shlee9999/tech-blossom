@@ -1,0 +1,149 @@
+---
+title: DDang
+authors: [shlee]
+tags: [project, react, react-native]
+---
+
+import Image from './image.png';
+import Image2 from './image-1.png';
+import Image3 from './image-2.png';
+import Image4 from './image-3.png';
+import Image5 from './image-4.png';
+import Image6 from './image-5.png';
+import Image7 from './image-6.png';
+import Image8 from './image-7.png';
+import Image9 from './image-8.png';
+import Image1 from './image-9.png';
+
+<div className='flex justify-center'>
+  <img src={Image} width={400} />
+</div>
+
+## ✨ 프로젝트 소개
+
+---
+
+DDang은 반려견 산책 서비스입니다. 산책 시 200미터 안에 산책하는 또다른 사용자가 있다면 해당 사용자에게 강번따 요청을 할 수 있습니다. 승낙 시 서로의 위치를 공유하며 만나서 함께 산책할 수 있는 서비스를 제공하며, 함께 산책을 마치면 친구를 맺을 수도 있습니다.
+
+- 배포 URL : https://ddang.pages.dev/
+- Github : https://github.com/prgrms-web-devcourse-final-project/WEB1_1_DDang_FE
+
+## 👪 팀원 구성
+
+---
+
+**프론트엔드(4) : 김주영(PM), 한규(FE 팀장), 남원일, 이성훈**
+
+**백엔드(4) : 노관태(BE 팀장), 문재경, 송경훈, 장준우**
+
+## **📅 개발 기간 및 작업 관리**
+
+---
+
+### **⏰ 개발 기간**
+
+- 2024.11 ~ 2024.12
+
+### **📊 작업 관리**
+
+**데일리 스크럼**
+
+<img src={Image1} />
+
+[**Github Project**](https://github.com/orgs/prgrms-web-devcourse-final-project/projects/4)에서 Stroy Point를 이용한 이슈 관리
+
+<img src={Image2} />
+
+## 🛠️ 기술 스택
+
+---
+
+- React, Typescript
+- styled-components
+- React Query, D3, SockJS
+- Vite, PWA
+
+## 🌴 브랜치 전략
+
+---
+
+**제가 직접 설계한 Git Flow입니다.**
+
+<img src={Image3} />
+
+- main, develop 브랜치를 제외한 브랜치들은 develop에 머지되고 일주일 간 커밋이 없을 시 자동으로 삭제됩니다. (Github Action 사용)
+
+| 브랜치 종류 | 분기점  | 주요 용도      | 작업 원칙                                                                                                                   | 병합(Merge) 대상        |
+| ----------- | ------- | -------------- | --------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| main        | -       | 배포           | - 초기 세팅만 직접 작업<br/>- 이후 merge만 수행<br/> - 버그 발생 시 hotfix 분기                                             | -                       |
+| hotfix      | main    | 배포 버그 픽스 | - 배포 환경의 긴급 오류 수정<br/> - 수정 완료 후 즉시 merge                                                                 | 모든 브랜치             |
+| develop     | main    | 개발 통합      | - feature 브랜치의 root 역할<br/> - 개발 진행 상황 통합                                                                     | main                    |
+| feature     | develop | 기능 개발      | - 새로운 기능 개발<br/> - 브랜치 내 버그는 동일 브랜치에서 수정<br/> - develop merge 후 발견된 버그도 원래 feature에서 수정 | develop                 |
+| bug         | develop | 버그 픽스      | - 버그 발생한 브랜치가 이미 삭제되었을 때 생성<br/> - 수정 완료 후 즉시 merge                                               | main 제외한 모든 브랜치 |
+
+## 🏆 기여한 점
+
+---
+
+### 기획
+
+초기 기획 단계에서 친구 요청 기능이 다수의 플로우에 포함되어 있었습니다. 이로 인해 플로우가 복잡해지고 개발 기간이 길어질 것을 우려하여 팀 회의에서 이 문제를 제기했습니다. 일부 팀원들의 동의를 얻어 PM을 설득하는 데 성공했습니다. 그 결과 친구 요청 플로우를 간소화했습니다. '강아지 번호 따기(강번따)' 기능을 사용하고 해당 산책을 완료한 경우에만 친구 요청이 가능하도록 제한했습니다. 이 과정을 통해 애자일 프로세스의 효과를 직접 체험했으며, 마감 기한을 준수할 수 있었습니다. 이 외 다양한 친구 요청 플로우는 2차 개발에서 추가될 예정입니다.
+
+### UI
+
+<div className='grid grid-cols-2 gap-6'>
+  <div>
+    <p>**홈페이지**</p>
+    <img src={Image4} width={400} />
+    <p>
+      <ul>
+        <li>알림창 무한 스크롤</li>
+        <li>Delay 부여하여 의도적 UX 향상</li>
+      </ul>
+    </p>
+  </div>
+  <div>
+    <p>**프로필 페이지**</p>
+    <img src={Image5} width={400} />
+  </div>
+</div>
+
+<div className='grid grid-cols-2 gap-6'>
+  <div>
+    **소셜 페이지**
+    <img src={Image6} width={400} />
+  </div>
+  <div>
+    **채팅**
+    <img src={Image7} width={400} />
+    <ul>
+      <li>
+        SockJS와 React Query의 optimistic update를 연동하여 실시간 채팅 성능
+        향상
+      </li>
+      <li>
+        useScrollPreservation 커스텀 훅 개발하여 채팅 업데이트 시 스크롤이 위로
+        올라가는 문제 해결
+      </li>
+    </ul>
+  </div>
+</div>
+
+### 개발
+
+- 모든 환경세팅을 담당하고 자주 쓰이는 공통 컴포넌트를 먼저 개발하여 팀원들의 개발 속도 향상 및 중복 작업 방지
+- zustand를 활용하여 효율적인 모달 관리 시스템을 구현
+  - 여러 모달을 스택 형태로 관리
+  - 각 모달에 고유 ID와 애니메이션 타입을 부여
+- 빌드와 린트 CI를 통해 코드 품질 향상
+- 라이트하우스 CI를 통해 라이트하우스 점수를 PR 댓글에 자동 반영
+  <img src={Image8} width={400} />
+
+## 팀원 리뷰
+
+<img src={Image9} />
+
+## 아쉬운 점
+
+- Lighthouse CI를 개발했으나, 시간 제약으로 인해 최적화 작업을 완료하지 못했습니다. 이는 2차 개발 과정에서 보완할 예정입니다.
+- 애플리케이션의 기능성을 고려했을 때 네이티브 앱으로 개발하는 것이 이상적이었으나, 제한된 개발 기간으로 인해 PWA로 구현하였습니다. 향후 2차 개발을 통해 네이티브 앱으로의 전환을 계획하고 있습니다.
