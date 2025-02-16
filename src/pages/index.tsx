@@ -199,22 +199,40 @@ export default function HomePage(): ReactNode {
 
         {/* 교육 섹션 */}
         <SectionLayout title='교육' icon={School}>
-          <Card>
-            <div className={cn('space-y-6')}>
-              <div className={cn('border-l-2 border-blue-200')}>
-                <h3 className={cn('text-lg font-semibold')}>
-                  프로그래머스 데브코스
-                </h3>
-                <p className={cn('text-gray-500 text-sm mb-2')}>
-                  2024.07 ~ 2024.12
-                </p>
-                <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
-                  <li>4개 프로젝트 개발 경험</li>
-                  <li>모던 자바스크립트 딥 다이브 스터디</li>
-                </ul>
+          <div className={cn('grid md:grid-cols-2 gap-6')}>
+            <Card>
+              <div className={cn('space-y-6')}>
+                <div className={cn('border-l-2 border-blue-200')}>
+                  <h3 className={cn('text-lg font-semibold')}>
+                    프로그래머스 데브코스
+                  </h3>
+                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                    2024.07 ~ 2024.12
+                  </p>
+                  <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
+                    <li>4개 프로젝트 개발 경험</li>
+                    <li>모던 자바스크립트 딥 다이브 스터디</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-          </Card>
+            </Card>
+            <Card>
+              <div className={cn('space-y-6')}>
+                <div className={cn('border-l-2 border-blue-200')}>
+                  <h3 className={cn('text-lg font-semibold')}>
+                    삼성전자 DX부문 동계 SW 역량강화 특강
+                  </h3>
+                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                    2023.01 ~ 2023.02
+                  </p>
+                  <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
+                    <li>4개 프로젝트 개발 경험</li>
+                    <li>모던 자바스크립트 딥 다이브 스터디</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+          </div>
         </SectionLayout>
 
         {/* 수상 경력 섹션 */}
@@ -225,7 +243,7 @@ export default function HomePage(): ReactNode {
                 데브코스 성적 우수상
               </h3>
               <p className={cn('text-gray-500 text-sm mb-2')}>
-                프로그래머스 데브코스
+                프로그래머스 데브코스에 성실히 참여하여 성적 1등을 달성했습니다.
               </p>
               <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
             </Card>
@@ -234,7 +252,8 @@ export default function HomePage(): ReactNode {
                 데브코스 프로젝트 인기상
               </h3>
               <p className={cn('text-gray-500 text-sm mb-2')}>
-                프로그래머스 데브코스
+                프로그래머스 데브코스의 최종 프로젝트에서 13팀 중 3팀에게 주는
+                인기상을 수여받았습니다.
               </p>
               <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
             </Card>
