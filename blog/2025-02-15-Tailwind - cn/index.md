@@ -10,7 +10,7 @@ tags: [tailwind]
 컴포넌트의 유연함을 위해 className을 다음처럼 optional하게 받아오는 경우가 정말 많다.
 
 ```
-const Button = ({ text, className }: { text: string; className?: string }) => (*
+const Button = ({ text, className }: { text: string; className?: string }) => (
   <button className={`${className} flex items-center justify-center`}>
     {text}
   </button>
