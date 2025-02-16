@@ -21,6 +21,8 @@ const Button = ({ text, className }: { text: string; className?: string }) => (
 이를 해결하기 위해 일반적으로 cn이라는 유틸 함수를 만들어 쓰는 것으로 보인다.
 ![Button with undefined class](./button-undefined.png)
 
+<!-- truncate -->
+
 ## cn
 
 cn은 classNames의 약자이며 주로 다음과 같이 작성한다.
