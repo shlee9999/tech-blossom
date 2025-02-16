@@ -1,5 +1,4 @@
 import { cn } from '@site/src/utils/cn';
-import { Circle } from 'lucide-react';
 import { ReactNode } from 'react';
 
 interface CardProps {
