@@ -83,8 +83,8 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    //todo Replace with your project's social card
+    image: 'img/logo.svg',
     navbar: {
       title: "Seonghoon's Tech Blossom",
       logo: {
