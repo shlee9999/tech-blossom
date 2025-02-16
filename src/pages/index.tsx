@@ -112,32 +112,20 @@ export default function HomePage(): ReactNode {
         {/* 기술 스택 섹션 */}
         <SectionLayout title='기술 스택' icon={Code}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
-            <Card className={cn('p-8 rounded-2xl shadow-lg')}>
-              <h3 className={cn('text-xl font-semibold mb-4')}>
-                Frontend Mastery
-              </h3>
-              <div className={cn('space-y-4')}>
-                {[
-                  { name: 'React', level: 'w-4/5' },
-                  { name: 'TypeScript', level: 'w-4/5' },
-                  { name: 'React Query', level: 'w-3/5' },
-                ].map((tech) => (
-                  <div key={tech.name}>
-                    <div className={cn('flex justify-between mb-1')}>
-                      <span>{tech.name}</span>
-                    </div>
-                    <div className={cn('h-2 bg-gray-200 rounded-full')}>
-                      <div
-                        className={cn(
-                          'h-full bg-blue-600 rounded-full transition-all duration-500'
-                        )}
-                        style={{ width: tech.level }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </Card>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-full h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
+                alt="SeongHoon's GitHub stats"
+              />
+            </div>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-3/4 h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
+                alt='Top Languages'
+              />
+            </div>
           </div>
         </SectionLayout>
 
