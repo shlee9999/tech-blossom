@@ -1,0 +1,7 @@
+{
+  "post": {
+    "prefix": "post",
+    "body": ["---", "title:$1", "authors:[shlee]", "tags:$2", "slug:$3", "---"],
+    "description": "markdown post with front matter"
+  }
+}

@@ -30,7 +30,7 @@ const config: Config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
+  organizationName: 'shlee9999', // Usually your GitHub org/user name.
   projectName: 'tech-blossom', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -52,7 +52,7 @@ const config: Config = {
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/shlee9999/seonghoon-tech-blossom',
+          editUrl: 'https://github.com/shlee9999/tech-blossom',
         },
         blog: {
           showReadingTime: true,
@@ -62,7 +62,7 @@ const config: Config = {
           },
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: 'https://github.com/shlee9999/seonghoon-tech-blossom',
+          editUrl: 'https://github.com/shlee9999/tech-blossom',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -93,11 +93,11 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Project',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/shlee9999/seonghoon-tech-blossom',
+          href: 'https://github.com/shlee9999/tech-blossom',
           label: 'GitHub',
           position: 'right',
         },
