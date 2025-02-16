@@ -91,7 +91,7 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'projectSidebar',
           position: 'left',
           label: 'Project',
         },
@@ -110,8 +110,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'Project',
+              to: '/docs/project',
             },
           ],
         },
@@ -141,7 +141,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/shlee9999',
             },
           ],
         },
