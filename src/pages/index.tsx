@@ -15,6 +15,7 @@ import {
 import { Card } from '@site/src/components/Card';
 import { SectionLayout } from '@site/src/components/SectionLayout';
 import { projects } from '@site/src/data/projects';
+import Link from '@docusaurus/Link';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -70,30 +71,56 @@ export default function HomePage(): ReactNode {
         {/* 소개 섹션 */}
         <SectionLayout icon={User} title='소개'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
-            <p className={cn('text-lg leading-relaxed text-gray-600 mb-4')}>
-              사용자 중심의 디자인과 견고한 아키텍처를 추구하는 프론트엔드
-              개발자입니다. 프로그래머스 데브코스에서 4개의 프로젝트를
-              성공적으로 리드하면서 협업 역량을 키웠으며, 최근에는 Zustand 상태
-              관리와 React Query를 활용한 고성능 애플리케이션 개발에 주력하고
-              있습니다.
+            <p className={cn('text-lg leading-relaxed text-gray-600')}>
+              <span className={cn('font-bold text-2xl')}>
+                👋 안녕하세요, 프론트엔드 개발자를 준비하는 이성훈입니다.
+              </span>
+              <br />
+              <span className={cn('block mt-3')}>
+                사용자 경험과 견고한 아키텍처를 최우선으로 하는 프론트엔드
+                개발자입니다. React 기반의 주요 프로젝트 3개를 성공적으로
+                리드하며 팀 협업 역량을 강화했습니다. 현재는 Zustand와 React
+                Query를 활용한 효율적인 상태 관리와 데이터 핸들링에 전문성을
+                보유하고 있으며, Jest와 React Testing Library를 통한 테스트 주도
+                개발(TDD)에도 깊은 관심을 가지고 있습니다. 특히 Lighthouse를
+                활용한 웹 성능 최적화에 주력하고 있으며, LCP(Largest Contentful
+                Paint) 개선을 통한 사용자 경험 향상에 집중하고 있습니다.
+              </span>
             </p>
-            <div className={cn('grid md:grid-cols-2 gap-6 mt-8')}>
+            <div className={cn('grid md:grid-cols-2 gap-6 mt-3')}>
               <div className={cn('p-6 bg-gray-50 rounded-xl')}>
                 <h3 className={cn('text-xl font-semibold mb-3')}>핵심 역량</h3>
                 <div className={cn('flex flex-wrap gap-2')}>
-                  {['React Ecosystem', 'TypeScript', '상태 관리', 'CI/CD'].map(
-                    (skill) => (
-                      <span
-                        key={skill}
-                        className={cn(
-                          'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm',
-                          'transition hover:bg-blue-200'
-                        )}
-                      >
-                        {skill}
-                      </span>
-                    )
-                  )}
+                  {[
+                    'React',
+                    'TypeScript',
+                    'JavaScript',
+                    'Zustand',
+                    'Redux',
+                    'React Query',
+                    'React Native',
+                    'HTML',
+                    'CSS',
+                    'CI/CD',
+                    'Lighthouse',
+                    'WebSocket',
+                    'Git & Github',
+                    'React Hook Form',
+                    'Framer Motion',
+                    'Styled Components',
+                    'Tailwind',
+                    'Emotion',
+                  ].map((skill) => (
+                    <span
+                      key={skill}
+                      className={cn(
+                        'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm',
+                        'transition hover:bg-blue-200'
+                      )}
+                    >
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -137,45 +164,52 @@ export default function HomePage(): ReactNode {
           <div className={cn('space-y-8')}>
             {projects.map((project, idx) => (
               <Card key={idx}>
-                <div className={cn('')}>
-                  <div className={cn('flex justify-between items-start mb-4')}>
-                    <div>
-                      <h3 className={cn('text-xl font-bold mb-2')}>
-                        {project.title}
-                      </h3>
-                      <p className={cn('text-gray-500 text-sm mb-3')}>
-                        {project.period}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className={cn('mb-4')}>
-                    <div className={cn('flex flex-wrap gap-2 mb-4')}>
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className={cn(
-                            'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'
-                          )}
-                        >
-                          {tech}
-                        </span>
-                      ))}
+                <Link
+                  to={`docs/project/${project.path}`}
+                  className={cn('!no-underline text-black')}
+                >
+                  <div className={cn('')}>
+                    <div
+                      className={cn('flex justify-between items-start mb-4')}
+                    >
+                      <div>
+                        <h3 className={cn('text-xl font-bold mb-2')}>
+                          {project.title}
+                        </h3>
+                        <p className={cn('text-gray-500 text-sm mb-3')}>
+                          {project.period}
+                        </p>
+                      </div>
                     </div>
 
-                    <ul className={cn('space-y-2')}>
-                      {project.contribution.map((item, i) => (
-                        <li
-                          key={i}
-                          className={cn('flex items-start text-gray-600')}
-                        >
-                          <span className={cn('text-blue-500 mr-2')}>▹</span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
+                    <div className={cn('mb-4')}>
+                      <div className={cn('flex flex-wrap gap-2 mb-4')}>
+                        {project.tech.map((tech) => (
+                          <span
+                            key={tech}
+                            className={cn(
+                              'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'
+                            )}
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+
+                      <ul className={cn('space-y-2')}>
+                        {project.contribution.map((item, i) => (
+                          <li
+                            key={i}
+                            className={cn('flex items-start text-gray-600')}
+                          >
+                            <span className={cn('text-blue-500 mr-2')}>▹</span>
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
-                </div>
+                </Link>
               </Card>
             ))}
           </div>
@@ -193,7 +227,7 @@ export default function HomePage(): ReactNode {
                   2024.07 ~ 2024.12
                 </p>
                 <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
-                  <li>4개 프로젝트 개발 경험 (팀 프로젝트 2회)</li>
+                  <li>4개 프로젝트 개발 경험</li>
                   <li>모던 자바스크립트 딥 다이브 스터디</li>
                 </ul>
               </div>
@@ -208,6 +242,18 @@ export default function HomePage(): ReactNode {
               <h3 className={cn('text-xl font-semibold mb-2')}>
                 데브코스 성적 우수상
               </h3>
+              <p className={cn('text-gray-500 text-sm mb-2')}>
+                프로그래머스 데브코스
+              </p>
+              <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
+            </Card>
+            <Card>
+              <h3 className={cn('text-xl font-semibold mb-2')}>
+                데브코스 프로젝트 인기상
+              </h3>
+              <p className={cn('text-gray-500 text-sm mb-2')}>
+                프로그래머스 데브코스
+              </p>
               <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
             </Card>
           </div>
