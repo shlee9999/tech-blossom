@@ -109,11 +109,11 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          title: 'Project',
           items: [
             {
               label: 'Project',
-              to: '/docs/project',
+              to: `/project/ddang`,
             },
           ],
         },

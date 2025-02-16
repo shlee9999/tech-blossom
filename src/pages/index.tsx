@@ -147,7 +147,7 @@ export default function HomePage(): ReactNode {
             {PROJECTS.map((project, idx) => (
               <Card key={idx}>
                 <Link
-                  to={`docs/project/${project.path}`}
+                  to={`/project/${project.path}`}
                   className={cn('!no-underline text-black')}
                 >
                   <div className={cn('')}>
