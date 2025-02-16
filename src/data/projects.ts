@@ -1,4 +1,4 @@
-export const projects = [
+export const PROJECTS = [
   {
     title: 'DDang - 반려견 산책 매칭 서비스',
     period: '2024.11 ~ 2024.12',

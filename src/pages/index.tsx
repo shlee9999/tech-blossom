@@ -14,8 +14,9 @@ import {
 } from 'lucide-react';
 import { Card } from '@site/src/components/Card';
 import { SectionLayout } from '@site/src/components/SectionLayout';
-import { projects } from '@site/src/data/projects';
+import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
+import { SKILLS } from '@site/src/data/skills';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -91,26 +92,7 @@ export default function HomePage(): ReactNode {
               <div className={cn('p-6 bg-gray-50 rounded-xl')}>
                 <h3 className={cn('text-xl font-semibold mb-3')}>핵심 역량</h3>
                 <div className={cn('flex flex-wrap gap-2')}>
-                  {[
-                    'React',
-                    'TypeScript',
-                    'JavaScript',
-                    'Zustand',
-                    'Redux',
-                    'React Query',
-                    'React Native',
-                    'HTML',
-                    'CSS',
-                    'CI/CD',
-                    'Lighthouse',
-                    'WebSocket',
-                    'Git & Github',
-                    'React Hook Form',
-                    'Framer Motion',
-                    'Styled Components',
-                    'Tailwind',
-                    'Emotion',
-                  ].map((skill) => (
+                  {SKILLS.map((skill) => (
                     <span
                       key={skill}
                       className={cn(
@@ -162,7 +144,7 @@ export default function HomePage(): ReactNode {
         {/* 프로젝트 섹션 */}
         <SectionLayout title='프로젝트' icon={Briefcase}>
           <div className={cn('space-y-8')}>
-            {projects.map((project, idx) => (
+            {PROJECTS.map((project, idx) => (
               <Card key={idx}>
                 <Link
                   to={`docs/project/${project.path}`}
