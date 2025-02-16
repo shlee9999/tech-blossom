@@ -55,6 +55,7 @@ const config: Config = {
           editUrl: 'https://github.com/shlee9999/tech-blossom',
           path: 'project',
           routeBasePath: 'project',
+          exclude: ['index.md'],
         },
         blog: {
           showReadingTime: true,
