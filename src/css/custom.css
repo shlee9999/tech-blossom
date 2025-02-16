@@ -1,35 +1,37 @@
 @import 'tailwindcss';
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
 @layer theme {
-  :root {
-    /* Primary colors */
-    --color-primary: #2e8555;
-    --color-primary-dark: #29784c;
-    --color-primary-darker: #277148;
-    --color-primary-darkest: #205d3b;
-    --color-primary-light: #33925d;
-    --color-primary-lighter: #359962;
-    --color-primary-lightest: #3cad6e;
+  /* :root { */
+  /* Primary colors */
+  /* --color-primary: #2e8555; */
+  /* --color-primary-dark: #29784c; */
+  /* --color-primary-darker: #277148; */
+  /* --color-primary-darkest: #205d3b; */
+  /* --color-primary-light: #33925d; */
+  /* --color-primary-lighter: #359962; */
+  /* --color-primary-lightest: #3cad6e; */
 
-    /* Other variables */
-    --code-font-size: 95%;
-    --highlighted-code-line-bg: color-mix(in srgb, black 10%, transparent);
-  }
+  /* Other variables */
+  /* --code-font-size: 95%; */
+  /* --highlighted-code-line-bg: color-mix(in srgb, black 10%, transparent); */
+  /* } */
 
-  [data-theme='dark'] {
-    --color-primary: #25c2a0;
-    --color-primary-dark: #21af90;
-    --color-primary-darker: #1fa588;
-    --color-primary-darkest: #1a8870;
-    --color-primary-light: #29d5b0;
-    --color-primary-lighter: #32d8b4;
-    --color-primary-lightest: #4fddbf;
-    --highlighted-code-line-bg: color-mix(in srgb, black 30%, transparent);
-  }
+  /* [data-theme='dark'] { */
+  /* --color-primary: #25c2a0; */
+  /* --color-primary-dark: #21af90; */
+  /* --color-primary-darker: #1fa588; */
+  /* --color-primary-darkest: #1a8870; */
+  /* --color-primary-light: #29d5b0; */
+  /* --color-primary-lighter: #32d8b4; */
+  /* --color-primary-lightest: #4fddbf; */
+  /* --highlighted-code-line-bg: color-mix(in srgb, black 30%, transparent); */
+  /* } */
 }
 
 @layer utilities {
-  .scroll-smooth {
-    scroll-behavior: smooth;
-  }
 }
