@@ -16,6 +16,17 @@ const config: Config = {
         },
       };
     },
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'study',
+        path: 'study',
+        routeBasePath: 'study',
+        sidebarPath: './sidebars.ts',
+        editUrl: 'https://github.com/shlee9999/tech-blossom',
+        exclude: ['index.md'],
+      },
+    ],
   ],
 
   title: "Seonghoon's Tech Blossom",
@@ -99,6 +110,13 @@ const config: Config = {
           label: 'Project',
         },
         { to: '/blog', label: 'Blog', position: 'left' },
+        {
+          type: 'docSidebar',
+          sidebarId: 'studySidebar',
+          position: 'left',
+          label: 'Study',
+          docsPluginId: 'study',
+        },
         {
           href: 'https://github.com/shlee9999/tech-blossom',
           label: 'GitHub',
