@@ -23,7 +23,8 @@ const palette2: Record<string, [number, number, number] | string> = {
   bleu: [0, 0, 255], // 오타
 };
 // 타입추론: const palette2: Record<string, string | [number, number, number]>
-palette2.green.toUpperCase();
+
+palette2.green.toUpperCase(); //! Error
 ```
 
 - key가 항상 string으로 추론되어, 타입 자동완성 X
