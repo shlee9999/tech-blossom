@@ -17,6 +17,8 @@ import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
 import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
+import { useAlertModal } from 'react-useful-kit';
+import 'react-useful-kit/dist/react-useful-kit.css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -127,7 +129,7 @@ function HomepageHeader() {
 
 export default function HomePage(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-
+  const alert = useAlertModal();
   return (
     <Layout
       title={`${siteConfig.title} 포트폴리오`}
@@ -339,7 +341,24 @@ export default function HomePage(): ReactNode {
         {/* 수상 경력 섹션 */}
         <SectionLayout title='수상 경력' icon={Trophy}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
-            <Card>
+            <Card
+            // onClick={() => {
+            //   alert({
+            //     content: (
+            //       <div>
+            //         <h3>데브코스 성적 우수상</h3>
+            //         <p>
+            //           프로그래머스 데브코스에 성실히 참여하여 성적 1등을
+            //           달성했습니다.
+            //         </p>
+            //         <p>2024.12</p>
+
+            //         {/* todo: 이미지 추가 */}
+            //       </div>
+            //     ),
+            //   });
+            // }}
+            >
               <h3 className={cn('text-xl font-semibold mb-2')}>
                 데브코스 성적 우수상
               </h3>
