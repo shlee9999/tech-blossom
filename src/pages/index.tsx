@@ -23,34 +23,113 @@ function HomepageHeader() {
   return (
     <header
       className={cn(
-        'bg-gradient-to-r from-[#4158D0] to-[#C850C0] py-20 px-4 text-center'
+        'relative min-h-screen flex items-center justify-center overflow-hidden',
+        'bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb]',
+        'before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/20 before:to-transparent',
+        'after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_0%,_transparent_50%)]'
       )}
     >
-      <div className={cn('max-w-4xl mx-auto')}>
-        <h1
+      {/* 배경 장식 요소들 */}
+      <div className='absolute inset-0 overflow-hidden'>
+        <div className='absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse'></div>
+        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse delay-1000'></div>
+        <div
+          className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-spin'
+          style={{ animationDuration: '20s' }}
+        ></div>
+      </div>
+
+      {/* 메인 콘텐츠 */}
+      <div className={cn('relative z-10 max-w-4xl mx-auto px-6 text-center')}>
+        {/* 프로필 이미지 영역 */}
+        <div className='mb-8 flex justify-center'>
+          <div className='relative'>
+            <div className='w-32 h-32 bg-gradient-to-r from-white/20 to-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-2xl'>
+              <User className='w-16 h-16 text-white/90' />
+            </div>
+            <div className='absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/50 to-purple-400/50 blur-xl animate-pulse'></div>
+          </div>
+        </div>
+
+        {/* 타이틀 */}
+        <div className='mb-6'>
+          <h1
+            className={cn(
+              'text-5xl md:text-6xl font-bold text-white mb-4',
+              'bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent',
+              'animate-fade-in-up drop-shadow-lg'
+            )}
+          >
+            프론트엔드 개발자
+          </h1>
+          <h2
+            className={cn(
+              'text-3xl md:text-4xl font-semibold text-white/90 mb-6',
+              'animate-fade-in-up animation-delay-200'
+            )}
+          >
+            이성훈
+          </h2>
+        </div>
+
+        {/* 서브타이틀 */}
+        <p
           className={cn(
-            'text-4xl font-bold text-white mb-4 animate-fade-in-up'
+            'text-xl md:text-2xl text-white/80 mb-8 leading-relaxed',
+            'animate-fade-in-up animation-delay-400',
+            'max-w-2xl mx-auto'
           )}
         >
-          프론트엔드 개발자 이성훈
-        </h1>
-        <p className={cn('text-xl text-indigo-200 mb-8')}>
           사용자 경험을 중시하는 열정적인 웹 개발자
+          <br />
+          <span className='text-lg text-white/70'>
+            React • TypeScript • 사용자 중심 설계
+          </span>
         </p>
-        <div className={cn('flex justify-center space-x-4')}>
+
+        {/* 버튼 그룹 */}
+        <div
+          className={cn(
+            'flex flex-col sm:flex-row justify-center items-center gap-4',
+            'animate-fade-in-up animation-delay-600'
+          )}
+        >
           <a
             href='https://github.com/shlee9999'
             className={cn(
-              'px-6 py-2 bg-white/10 rounded-full !no-underline',
-              '!text-white hover:bg-white/30 transition-all duration-300',
-              'flex items-center gap-2',
-              'hover:shadow-[0_0_15px_rgba(255,255,255,0.3)]',
-              'hover:scale-105'
+              'group px-8 py-4 bg-white/15 rounded-full !no-underline backdrop-blur-sm',
+              '!text-white hover:bg-white/25 transition-all duration-500',
+              'flex items-center gap-3 text-lg font-medium',
+              'hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]',
+              'hover:scale-105 border border-white/20',
+              'hover:-translate-y-1'
             )}
           >
-            <GitBranch className='w-4 h-4' />
+            <GitBranch className='w-5 h-5 group-hover:rotate-12 transition-transform duration-300' />
             GitHub Portfolio
           </a>
+
+          <a
+            href='#main'
+            className={cn(
+              'group px-8 py-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full !no-underline backdrop-blur-sm',
+              '!text-white hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-500',
+              'flex items-center gap-3 text-lg font-medium',
+              'hover:shadow-[0_0_30px_rgba(147,51,234,0.4)]',
+              'hover:scale-105 border border-white/20',
+              'hover:-translate-y-1'
+            )}
+          >
+            <BookOpen className='w-5 h-5 group-hover:scale-110 transition-transform duration-300' />
+            포트폴리오 보기
+          </a>
+        </div>
+
+        {/* 스크롤 인디케이터 */}
+        <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'>
+          <div className='w-6 h-10 border-2 border-white/30 rounded-full flex justify-center'>
+            <div className='w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse'></div>
+          </div>
         </div>
       </div>
     </header>
@@ -68,7 +147,7 @@ export default function HomePage(): ReactNode {
     >
       <HomepageHeader />
 
-      <main className={cn('py-16 px-4 max-w-7xl mx-auto')}>
+      <main id='main' className={cn('py-16 px-4 max-w-7xl mx-auto')}>
         {/* 소개 섹션 */}
         <SectionLayout icon={User} title='소개'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
