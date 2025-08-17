@@ -108,35 +108,35 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: 'Project',
-          items: [
-            {
-              label: 'Project',
-              to: `/project/ddang`,
-            },
-          ],
-        },
-        {
-          title: 'GitHub',
-          items: [
-            {
-              label: 'GitHub',
-              href: 'https://github.com/shlee9999',
-            },
-          ],
-        },
-        {
-          title: 'More',
-          items: [
-            {
-              label: 'Blog',
-              to: '/blog',
-            },
-          ],
-        },
-      ],
+      // links: [
+      //   {
+      //     title: 'Project',
+      //     items: [
+      //       {
+      //         label: 'Project',
+      //         to: `/project/ddang`,
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'GitHub',
+      //     items: [
+      //       {
+      //         label: 'GitHub',
+      //         href: 'https://github.com/shlee9999',
+      //       },
+      //     ],
+      //   },
+      //   {
+      //     title: 'More',
+      //     items: [
+      //       {
+      //         label: 'Blog',
+      //         to: '/blog',
+      //       },
+      //     ],
+      //   },
+      // ],
       copyright: `Copyright © ${new Date().getFullYear()} Seonghoon's Tech Blossom. Built with Docusaurus.`,
     },
     prism: {
