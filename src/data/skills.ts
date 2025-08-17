@@ -2,6 +2,9 @@ export const SKILLS = [
   'React',
   'TypeScript',
   'JavaScript',
+  'StoryBook',
+  'Jest',
+  'React Testing Library',
   'Zustand',
   'Redux',
   'React Query',
@@ -17,4 +20,50 @@ export const SKILLS = [
   'Styled Components',
   'Tailwind',
   'Emotion',
+];
+
+export const SKILL_CATEGORIES = [
+  {
+    title: '프론트엔드 프레임워크',
+    icon: '⚛️',
+    color: 'from-blue-500 to-cyan-500',
+    skills: ['React', 'React Native'],
+  },
+  {
+    title: '언어',
+    icon: '💻',
+    color: 'from-purple-500 to-pink-500',
+    skills: ['TypeScript', 'JavaScript', 'HTML', 'CSS'],
+  },
+  {
+    title: '상태 관리',
+    icon: '🔄',
+    color: 'from-green-500 to-emerald-500',
+    skills: ['Zustand', 'Redux', 'React Query', 'Context API'],
+  },
+  {
+    title: '테스팅',
+    icon: '🧪',
+    color: 'from-orange-500 to-red-500',
+    skills: ['Jest', 'React Testing Library', 'StoryBook'],
+  },
+  {
+    title: '스타일링',
+    icon: '🎨',
+    color: 'from-indigo-500 to-purple-500',
+    skills: ['Tailwind', 'Styled Components', 'Emotion'],
+  },
+  {
+    title: '도구 & 기타',
+    icon: '🛠️',
+    color: 'from-gray-500 to-slate-500',
+    skills: [
+      'Git & Github',
+      'CI/CD',
+      'Lighthouse',
+      'WebSocket',
+      'React Hook Form',
+      'Framer Motion',
+    ],
+  },
 ];

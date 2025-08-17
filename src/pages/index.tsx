@@ -16,7 +16,7 @@ import { Card } from '@site/src/components/Card';
 import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
-import { SKILLS } from '@site/src/data/skills';
+import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -95,41 +95,30 @@ function HomepageHeader() {
           )}
         >
           <a
-            href='https://github.com/shlee9999'
-            className={cn(
-              'group px-8 py-4 bg-white/15 rounded-full !no-underline backdrop-blur-sm',
-              '!text-white hover:bg-white/25 transition-all duration-500',
-              'flex items-center gap-3 text-lg font-medium',
-              'hover:shadow-[0_0_30px_rgba(255,255,255,0.4)]',
-              'hover:scale-105 border border-white/20',
-              'hover:-translate-y-1'
-            )}
-          >
-            <GitBranch className='w-5 h-5 group-hover:rotate-12 transition-transform duration-300' />
-            GitHub Portfolio
-          </a>
-
-          <a
             href='#main'
             className={cn(
-              'group px-8 py-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full !no-underline backdrop-blur-sm',
-              '!text-white hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-500',
+              'group px-8 py-4 bg-blue-600 rounded-full !no-underline',
+              '!text-white hover:bg-blue-700 transition-all duration-300',
               'flex items-center gap-3 text-lg font-medium',
-              'hover:shadow-[0_0_30px_rgba(147,51,234,0.4)]',
-              'hover:scale-105 border border-white/20',
-              'hover:-translate-y-1'
+              'border-2 border-blue-500'
             )}
           >
             <BookOpen className='w-5 h-5 group-hover:scale-110 transition-transform duration-300' />
             포트폴리오 보기
           </a>
-        </div>
-
-        {/* 스크롤 인디케이터 */}
-        <div className='absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce'>
-          <div className='w-6 h-10 border-2 border-white/30 rounded-full flex justify-center'>
-            <div className='w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse'></div>
-          </div>
+          <a
+            href='https://github.com/shlee9999'
+            className={cn(
+              'group px-8 py-4 bg-white/15 rounded-full !no-underline backdrop-blur-sm',
+              '!text-white hover:bg-white/25 transition-all duration-300',
+              'flex items-center gap-3 text-lg font-medium',
+              'border border-white/20'
+            )}
+            target='_blank'
+          >
+            <GitBranch className='w-5 h-5 group-hover:rotate-12 transition-transform duration-300' />
+            GitHub
+          </a>
         </div>
       </div>
     </header>
@@ -167,29 +156,77 @@ export default function HomePage(): ReactNode {
                 Paint) 개선을 통한 사용자 경험 향상에 집중하고 있습니다.
               </span>
             </p>
-            <div className={cn('grid md:grid-cols-2 gap-6 mt-3')}>
-              <div className={cn('p-6 bg-gray-50 rounded-xl')}>
-                <h3 className={cn('text-xl font-semibold mb-3')}>핵심 역량</h3>
-                <div className={cn('flex flex-wrap gap-2')}>
-                  {SKILLS.map((skill) => (
-                    <span
-                      key={skill}
-                      className={cn(
-                        'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm',
-                        'transition hover:bg-blue-200'
-                      )}
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
           </Card>
         </SectionLayout>
 
-        {/* 기술 스택 섹션 */}
-        <SectionLayout title='기술 스택' icon={Code}>
+        {/* 핵심 역량 섹션 */}
+        <SectionLayout icon={Code} title='핵심 역량'>
+          <div className={cn('grid md:grid-cols-2 lg:grid-cols-3 gap-6')}>
+            {SKILL_CATEGORIES.map((category, idx) => (
+              <Card
+                key={idx}
+                className={cn(
+                  'relative overflow-hidden group',
+                  'bg-gradient-to-br from-white to-gray-50',
+                  'hover:shadow-xl transition-all duration-300',
+                  'border-l-4 border-transparent',
+                  'hover:border-l-blue-500'
+                )}
+              >
+                {/* 배경 그라데이션 효과 */}
+                <div
+                  className={cn(
+                    'absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300',
+                    `bg-gradient-to-br ${category.color}`
+                  )}
+                />
+
+                <div className={cn('relative z-10 p-6')}>
+                  {/* 카테고리 헤더 */}
+                  <div className={cn('flex  items-center gap-3 mb-5')}>
+                    <span
+                      className={cn(
+                        'w-12 h-12 rounded-full flex items-center justify-center text-xl',
+                        `bg-gradient-to-br ${category.color}`,
+                        'shadow-lg group-hover:scale-110 transition-transform duration-300'
+                      )}
+                    >
+                      {category.icon}
+                    </span>
+                    <h3 className={cn('text-lg font-bold text-gray-800')}>
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  {/* 스킬 태그들 */}
+                  <div className={cn('flex flex-wrap gap-2')}>
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className={cn(
+                          'px-3 py-1 rounded-full text-sm font-medium',
+                          'bg-gray-200 text-gray-700',
+                          'hover:bg-blue-100 hover:text-blue-800',
+                          'transition-all duration-200',
+                          'border border-gray-200 hover:border-blue-300',
+                          'transform hover:scale-105'
+                        )}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* 스킬 개수 표시 */}
+                  {/* <div className={cn('mt-4 text-xs text-gray-500')}>
+                    {category.skills.length}개의 기술
+                  </div> */}
+                </div>
+              </Card>
+            ))}
+          </div>
+        </SectionLayout>
+        {/* <SectionLayout title='기술 스택' icon={Code}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
               <img
@@ -206,59 +243,57 @@ export default function HomePage(): ReactNode {
               />
             </div>
           </div>
-        </SectionLayout>
+        </SectionLayout> */}
 
         {/* 프로젝트 섹션 */}
         <SectionLayout title='프로젝트' icon={Briefcase}>
           <div className={cn('space-y-8')}>
             {PROJECTS.map((project, idx) => (
               <Card key={idx}>
-                <Link
-                  to={`/project/${project.path}`}
-                  className={cn('!no-underline text-black')}
-                >
-                  <div className={cn('')}>
-                    <div
-                      className={cn('flex justify-between items-start mb-4')}
-                    >
-                      <div>
+                <div className={cn('')}>
+                  <div className={cn('flex justify-between items-start mb-4')}>
+                    <div>
+                      <Link
+                        to={`/project/${project.path}`}
+                        className={cn('!no-underline text-black')}
+                      >
                         <h3 className={cn('text-xl font-bold mb-2')}>
                           {project.title}
-                        </h3>
-                        <p className={cn('text-gray-500 text-sm mb-3')}>
-                          {project.period}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className={cn('mb-4')}>
-                      <div className={cn('flex flex-wrap gap-2 mb-4')}>
-                        {project.tech.map((tech) => (
-                          <span
-                            key={tech}
-                            className={cn(
-                              'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'
-                            )}
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-
-                      <ul className={cn('space-y-2')}>
-                        {project.contribution.map((item, i) => (
-                          <li
-                            key={i}
-                            className={cn('flex items-start text-gray-600')}
-                          >
-                            <span className={cn('text-blue-500 mr-2')}>▹</span>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
+                        </h3>{' '}
+                      </Link>
+                      <p className={cn('text-gray-500 text-sm mb-3')}>
+                        {project.period}
+                      </p>
                     </div>
                   </div>
-                </Link>
+
+                  <div className={cn('mb-4')}>
+                    <div className={cn('flex flex-wrap gap-2 mb-4')}>
+                      {project.tech.map((tech) => (
+                        <span
+                          key={tech}
+                          className={cn(
+                            'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'
+                          )}
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+
+                    <ul className={cn('space-y-2')}>
+                      {project.contribution.map((item, i) => (
+                        <li
+                          key={i}
+                          className={cn('flex items-start text-gray-600')}
+                        >
+                          <span className={cn('text-blue-500 mr-2')}>▹</span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
