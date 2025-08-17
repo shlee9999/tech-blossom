@@ -328,8 +328,7 @@ export default function HomePage(): ReactNode {
                     2023.01 ~ 2023.02
                   </p>
                   <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
-                    <li>4개 프로젝트 개발 경험</li>
-                    <li>모던 자바스크립트 딥 다이브 스터디</li>
+                    <li>Java를 이용한 알고리즘 학습</li>
                   </ul>
                 </div>
               </div>
