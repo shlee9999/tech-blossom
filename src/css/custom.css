@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Pretendard */
+@font-face {
+  font-family: Pretendard;
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+}
+
+/* Inter */
+@font-face {
+  font-family: Inter;
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+li,
+blockquote,
+span {
+  font-family: 'Pretendard Variable', 'Pretendard', 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif !important;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
