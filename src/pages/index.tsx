@@ -17,8 +17,6 @@ import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
 import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
-import { useAlertModal } from 'react-useful-kit';
-import 'react-useful-kit/dist/react-useful-kit.css';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -129,7 +127,7 @@ function HomepageHeader() {
 
 export default function HomePage(): ReactNode {
   const { siteConfig } = useDocusaurusContext();
-  const alert = useAlertModal();
+
   return (
     <Layout
       title={`${siteConfig.title} 포트폴리오`}

@@ -6,4 +6,9 @@ tailwind:
 react:
   label: React
   permalink: /react
-  description: reactCSS
+  description: 리액트
+
+Web:
+  label: Web
+  permalink: /web
+  description: 웹 개발 관련 기술
