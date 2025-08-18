@@ -25,6 +25,8 @@ const config: Config = {
         sidebarPath: './sidebars.ts',
         editUrl: 'https://github.com/shlee9999/tech-blossom',
         exclude: ['index.md'],
+        showLastUpdateTime: true,
+        showLastUpdateAuthor: true,
       },
     ],
   ],

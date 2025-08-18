@@ -1,3 +1,9 @@
+---
+title: Satisfies 연산자
+date: 2025-08-17
+tags: [typescript, satisfies, type-checking]
+---
+
 # Satisfies 연산자
 
 ## 왜 나왔을까?
