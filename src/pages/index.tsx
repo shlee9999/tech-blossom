@@ -142,18 +142,49 @@ export default function HomePage(): ReactNode {
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
             <p className={cn('text-lg leading-relaxed text-gray-600')}>
               <span className={cn('font-bold text-2xl')}>
-                👋 안녕하세요, 프론트엔드 개발자를 준비하는 이성훈입니다.
+                👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
               </span>
               <br />
               <span className={cn('block mt-3')}>
                 사용자 경험과 견고한 아키텍처를 최우선으로 하는 프론트엔드
-                개발자입니다. React 기반의 주요 프로젝트 3개를 성공적으로
-                리드하며 팀 협업 역량을 강화했습니다. 현재는 Zustand와 React
-                Query를 활용한 효율적인 상태 관리와 데이터 핸들링에 전문성을
-                보유하고 있으며, Jest와 React Testing Library를 통한 테스트 주도
-                개발(TDD)에도 깊은 관심을 가지고 있습니다. 특히 Lighthouse를
-                활용한 웹 성능 최적화에 주력하고 있으며, LCP(Largest Contentful
-                Paint) 개선을 통한 사용자 경험 향상에 집중하고 있습니다.
+                개발자입니다.
+                <br />
+                현재 <strong>디리아</strong>(2025.02~)에서 재직하며{' '}
+                <strong>
+                  NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
+                </strong>
+                의 프론트엔드 개발을 전담하고 있습니다. 현업에서는 신뢰할 수
+                있는 컴포넌트 설계와 클린 코드 작성을 목표로, 구두 피드백뿐만
+                아니라 GitLab 이슈 기반 협업을 통해 팀과 고객사가 모두 만족할 수
+                있는 결과물을 만들어내고 있습니다. 특히 복잡한 중첩 구조의{' '}
+                <strong>MDI 페이지 구조를 Redux 기반으로 설계·구현</strong>하며,
+                솔루션 환경에 최적화된 프론트엔드 라이브러리로서의 역할을
+                수행하고 있습니다.
+                <br />
+                또한, 개인적으로는{' '}
+                <a
+                  href='https://www.npmjs.com/package/react-useful-kit'
+                  target='_blank'
+                  className={cn('text-blue-500 underline')}
+                  rel='noreferrer'
+                >
+                  React Useful Kit
+                </a>{' '}
+                라이브러리를 개발하며, 재사용 가능한 컴포넌트와 유틸리티 제공을
+                통해 오픈소스 생태계에도 기여하고 있습니다.
+              </span>
+
+              <span className={cn('block mt-6 text-gray-700')}>
+                <strong>이전 경험</strong>으로는 React 기반 주요 프로젝트들을
+                성공적으로 리드하며 팀 협업 역량을 강화했습니다. Redux와 React
+                Query를 활용한 효율적인 상태 관리 및 데이터 핸들링에 강점을
+                지니고 있으며, Jest·React Testing Library를 통한 테스트 주도
+                개발(TDD)에도 집중해 왔습니다.
+                <br />
+                또한 웹 성능 최적화에도 깊은 관심을 가지고 있어, Lighthouse
+                분석을 바탕으로{' '}
+                <strong>LCP(Largest Contentful Paint) 개선</strong>을 추진하며
+                사용자 경험 향상에 기여했습니다.
               </span>
             </p>
           </Card>
@@ -161,6 +192,22 @@ export default function HomePage(): ReactNode {
 
         {/* 핵심 역량 섹션 */}
         <SectionLayout icon={Code} title='핵심 역량'>
+          {/* <div className={cn('grid md:grid-cols-2 gap-6 mb-6')}>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-full h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
+                alt="SeongHoon's GitHub stats"
+              />
+            </div>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-3/4 h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
+                alt='Top Languages'
+              />
+            </div>
+          </div> */}
           <div className={cn('grid md:grid-cols-2 lg:grid-cols-3 gap-6')}>
             {SKILL_CATEGORIES.map((category, idx) => (
               <Card
@@ -216,34 +263,11 @@ export default function HomePage(): ReactNode {
                       </span>
                     ))}
                   </div>
-
-                  {/* 스킬 개수 표시 */}
-                  {/* <div className={cn('mt-4 text-xs text-gray-500')}>
-                    {category.skills.length}개의 기술
-                  </div> */}
                 </div>
               </Card>
             ))}
           </div>
         </SectionLayout>
-        {/* <SectionLayout title='기술 스택' icon={Code}>
-          <div className={cn('grid md:grid-cols-2 gap-6')}>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-full h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
-                alt="SeongHoon's GitHub stats"
-              />
-            </div>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-3/4 h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
-                alt='Top Languages'
-              />
-            </div>
-          </div>
-        </SectionLayout> */}
 
         {/* 프로젝트 섹션 */}
         <SectionLayout title='프로젝트' icon={Briefcase}>
