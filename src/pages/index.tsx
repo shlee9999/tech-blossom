@@ -190,85 +190,6 @@ export default function HomePage(): ReactNode {
           </Card>
         </SectionLayout>
 
-        {/* 핵심 역량 섹션 */}
-        <SectionLayout icon={Code} title='핵심 역량'>
-          {/* <div className={cn('grid md:grid-cols-2 gap-6 mb-6')}>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-full h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
-                alt="SeongHoon's GitHub stats"
-              />
-            </div>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-3/4 h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
-                alt='Top Languages'
-              />
-            </div>
-          </div> */}
-          <div className={cn('grid md:grid-cols-2 lg:grid-cols-3 gap-6')}>
-            {SKILL_CATEGORIES.map((category, idx) => (
-              <Card
-                key={idx}
-                className={cn(
-                  'relative overflow-hidden group',
-                  'bg-gradient-to-br from-white to-gray-50',
-                  'hover:shadow-xl transition-all duration-300',
-                  'border-l-4 border-transparent',
-                  'hover:border-l-blue-500'
-                )}
-              >
-                {/* 배경 그라데이션 효과 */}
-                <div
-                  className={cn(
-                    'absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300',
-                    `bg-gradient-to-br ${category.color}`
-                  )}
-                />
-
-                <div className={cn('relative z-10 p-6')}>
-                  {/* 카테고리 헤더 */}
-                  <div className={cn('flex  items-center gap-3 mb-5')}>
-                    <span
-                      className={cn(
-                        'w-12 h-12 rounded-full flex items-center justify-center text-xl',
-                        `bg-gradient-to-br ${category.color}`,
-                        'shadow-lg group-hover:scale-110 transition-transform duration-300'
-                      )}
-                    >
-                      {category.icon}
-                    </span>
-                    <h3 className={cn('text-lg font-bold text-gray-800')}>
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  {/* 스킬 태그들 */}
-                  <div className={cn('flex flex-wrap gap-2')}>
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className={cn(
-                          'px-3 py-1 rounded-full text-sm font-medium',
-                          'bg-gray-200 text-gray-700',
-                          'hover:bg-blue-100 hover:text-blue-800',
-                          'transition-all duration-200',
-                          'border border-gray-200 hover:border-blue-300',
-                          'transform hover:scale-105'
-                        )}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </SectionLayout>
-
         {/* 프로젝트 섹션 */}
         <SectionLayout title='프로젝트' icon={Briefcase}>
           <div className={cn('space-y-8')}>
@@ -329,7 +250,7 @@ export default function HomePage(): ReactNode {
             <Card>
               <div className={cn('space-y-6')}>
                 <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-lg font-semibold')}>
+                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
                     프로그래머스 데브코스
                   </h3>
                   <p className={cn('text-gray-500 text-sm mb-2')}>
@@ -345,7 +266,7 @@ export default function HomePage(): ReactNode {
             <Card>
               <div className={cn('space-y-6')}>
                 <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-lg font-semibold')}>
+                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
                     삼성전자 DX부문 동계 SW 역량강화 특강
                   </h3>
                   <p className={cn('text-gray-500 text-sm mb-2')}>
@@ -381,7 +302,7 @@ export default function HomePage(): ReactNode {
             //   });
             // }}
             >
-              <h3 className={cn('text-xl font-semibold mb-2')}>
+              <h3 className={cn('text-xl font-semibold mb-2 text-gray-900')}>
                 데브코스 성적 우수상
               </h3>
               <p className={cn('text-gray-500 text-sm mb-2')}>
@@ -390,7 +311,7 @@ export default function HomePage(): ReactNode {
               <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
             </Card>
             <Card>
-              <h3 className={cn('text-xl font-semibold mb-2')}>
+              <h3 className={cn('text-xl font-semibold mb-2 text-gray-900 ')}>
                 데브코스 프로젝트 인기상
               </h3>
               <p className={cn('text-gray-500 text-sm mb-2')}>
@@ -401,6 +322,82 @@ export default function HomePage(): ReactNode {
             </Card>
           </div>
         </SectionLayout>
+
+        {/* 핵심 역량 섹션 */}
+        {/* <SectionLayout icon={Code} title='핵심 역량'>
+          <div className={cn('grid md:grid-cols-2 gap-6 mb-6')}>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-full h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
+                alt="SeongHoon's GitHub stats"
+              />
+            </div>
+            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
+              <img
+                className='w-3/4 h-full object-contain'
+                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
+                alt='Top Languages'
+              />
+            </div>
+          </div>
+          <div className={cn('grid md:grid-cols-2 lg:grid-cols-3 gap-6')}>
+            {SKILL_CATEGORIES.map((category, idx) => (
+              <Card
+                key={idx}
+                className={cn(
+                  'relative overflow-hidden group',
+                  'bg-gradient-to-br from-white to-gray-50',
+                  'hover:shadow-xl transition-all duration-300',
+                  'border-l-4 border-transparent',
+                  'hover:border-l-blue-500'
+                )}
+              >
+                <div
+                  className={cn(
+                    'absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300',
+                    `bg-gradient-to-br ${category.color}`
+                  )}
+                />
+
+                <div className={cn('relative z-10 p-6')}>
+                  <div className={cn('flex  items-center gap-3 mb-5')}>
+                    <span
+                      className={cn(
+                        'w-12 h-12 rounded-full flex items-center justify-center text-xl',
+                        `bg-gradient-to-br ${category.color}`,
+                        'shadow-lg group-hover:scale-110 transition-transform duration-300'
+                      )}
+                    >
+                      {category.icon}
+                    </span>
+                    <h3 className={cn('text-lg font-bold text-gray-800')}>
+                      {category.title}
+                    </h3>
+                  </div>
+
+                  <div className={cn('flex flex-wrap gap-2')}>
+                    {category.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className={cn(
+                          'px-3 py-1 rounded-full text-sm font-medium',
+                          'bg-gray-200 text-gray-700',
+                          'hover:bg-blue-100 hover:text-blue-800',
+                          'transition-all duration-200',
+                          'border border-gray-200 hover:border-blue-300',
+                          'transform hover:scale-105'
+                        )}
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </SectionLayout> */}
       </main>
     </Layout>
   );
