@@ -8,7 +8,7 @@
 
 ## 제어 컴포넌트
 
-React의 state로 폼 요소들을 컨트롤합니다. 모든 상태변경은 `setState` 메서드를 통해 이루어지며, **키 입력마다 유효성 검사**가 가능하고 상태관리가 예측 a
+React의 state로 폼 요소들을 컨트롤합니다. 모든 상태변경은 `setState` 메서드를 통해 이루어지며, **키 입력마다 유효성 검사**가 가능하고 상태관리가 예측
 가능하다는 장점이 있습니다. 또한 SSOT를 준수합니다.
 
 > [SSOT](https://chancethecoder.tistory.com/45)(Single Source Of Truth, 단일 진실 공급원) : 하나의 상태는 한 곳에만 존재해야 한다
