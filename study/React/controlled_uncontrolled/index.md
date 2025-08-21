@@ -1,6 +1,6 @@
-# 7. 제어 컴포넌트 vs 비제어 컴포넌트
+# 제어 컴포넌트 vs 비제어 컴포넌트
 
-![Vite + React + TS - Chrome 2024-12-20 12-45-43.gif](7%20%EC%A0%9C%EC%96%B4%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20vs%20%EB%B9%84%EC%A0%9C%EC%96%B4%20%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%20160de2152f938005acc5dd95682baf60/Vite__React__TS_-_Chrome_2024-12-20_12-45-43.gif)
+![Vite + React + TS - Chrome 2024-12-20 12-45-43.gif](./Vite__React__TS_-_Chrome_2024-12-20_12-45-43.gif)
 
 ## 개요
 
