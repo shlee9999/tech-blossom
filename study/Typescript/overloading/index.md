@@ -2,7 +2,7 @@
 
 ## 개요
 
-함수 오버로딩(Function Overloading)은 **동일한 함수명**으로 **서로 다른 매개변수** [시그니처](/study/Typescript/words/function_signature.md)를 가진 여러 함수를 정의하는 TypeScript 기능입니다.
+함수 오버로딩(Function Overloading)은 **동일한 함수명**으로 **서로 다른 매개변수** [시그니처](/study/Typescript/00-words/function_signature.md)를 가진 여러 함수를 정의하는 TypeScript 기능입니다.
 JavaScript는 동적 타입 언어로 함수 오버로딩을 직접 지원하지 않지만, TypeScript에서는 **타입 시스템**을 통해 이를 가능하게 합니다. 실제 구현은 하나의 JavaScript 함수로 이루어지며, TypeScript 컴파일러가 타입 체크를 통해 올바른 시그니처 사용을 보장합니다.
 
 > 함수 호출문에 마우스 커서를 올려서 타입이 올바르게 매핑되는지 확인해 보세요.
