@@ -22,3 +22,6 @@ yarn-error.log*
 # test
 src/pages/test.tsx
 tests
+
+# cursor
+.cursor
