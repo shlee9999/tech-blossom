@@ -1,4 +1,8 @@
-# this 표 하나로 끝내기
+---
+sidebar_position: 1
+---
+
+# ⭐ this 표 하나로 끝내기
 
 ## 개요
 
