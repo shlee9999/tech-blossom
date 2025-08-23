@@ -1,6 +1,7 @@
 ---
 title: JavaScript
 tags: [javascript, programming-language]
+sidebar_position: 3
 ---
 
 # JavaScript
