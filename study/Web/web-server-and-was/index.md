@@ -1,9 +1,10 @@
 ---
 slug: web-server-and-was
-title: What is Web Server and WAS
 authors: [shlee]
 tags: [Web]
 ---
+
+# Web Server and WAS
 
 ## Web Server
 

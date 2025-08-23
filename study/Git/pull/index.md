@@ -1,4 +1,4 @@
-# Git Pull = Fetch + Merge
+# Pull = Fetch + Merge
 
 ## 개요
 
