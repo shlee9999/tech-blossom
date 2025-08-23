@@ -16,11 +16,11 @@ tags: [typescript, satisfies, type-checking]
 const palette1 = {
   red: [255, 0, 0],
   green: '#00ff00',
-  ~~bleu~~: [0, 0, 255], // 오타를 못잡는다.
+  bleu: [0, 0, 255], // 오타를 못잡는다.
 };
 ```
 
-### ":"
+### 타입 어노테이션 ":"
 
 ```tsx
 const palette2: Record<string, [number, number, number] | string> = {
@@ -65,3 +65,9 @@ type Palette3Key = keyof typeof palette3; // type Palette3Key = "red" | "green" 
 
 - key에 대한 구체적 타입 추론 가능
 - value에 대한 구체적인 검증도 해준다.
+
+## 참고
+
+- [타입스크립트 satisfies 연산자(operator) 이해하기](https://mycodings.fly.dev/blog/2023-07-14-understanding-typescript-satisfies-operator)
+- [Typescript satisfies Operator는 무엇일까?](https://velog.io/@keumky1/Typescript-satisfiesOperator%EB%8A%94-%EB%AC%B4%EC%97%87%EC%9D%BC%EA%B9%8C)
+- [satisfies 연산자](https://www.zerocho.com/category/TypeScript/post/638c327844d418915ee64b0b)

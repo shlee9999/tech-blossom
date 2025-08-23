@@ -138,6 +138,8 @@ const { promise, resolve, reject } = Promise.withResolvers();
 resolve(1);
 ```
 
----
+## 출처 및 참고 링크
 
-참고: MDN, TC39 Finished Proposals, ECMAScript 사양
+- [ECMAScript 자바스트립트 버전별 특징](https://velog.io/@zioo/ES6-%EB%AC%B8%EB%B2%95%EC%A0%95%EB%A6%AC)
+- [W3Schools JavaScript 버전별 요약](https://www.w3schools.com/js/js_versions.asp)
+- [다양한 ES버전별 기능 소개 및 비교](https://dev.to/techelopment/ecmascript-a-collection-of-the-main-new-features-of-each-version-8n5)
