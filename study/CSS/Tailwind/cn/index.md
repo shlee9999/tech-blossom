@@ -1,9 +1,9 @@
 ---
-slug: tailwind-cn
-title: Tailwind - cn
 authors: [shlee]
 tags: [tailwind]
 ---
+
+# cn - className 정리 함수
 
 ## Tailwind의 문제점
 
