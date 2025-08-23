@@ -110,7 +110,7 @@ const config: Config = {
           position: 'left',
           label: 'Project',
         },
-        { to: '/blog', label: 'Blog', position: 'left' },
+        // { to: '/blog', label: 'Blog', position: 'left' },
         {
           type: 'docSidebar',
           sidebarId: 'studySidebar',
