@@ -47,7 +47,7 @@ React는 사용자 인터페이스(UI)를 만들기 위한 Javascript 라이브�
 
 ## 참고
 
-- https://www.youtube.com/watch?v=LclObYwGj90
-- https://www.youtube.com/watch?v=V3QsSrldHqI
-- https://www.youtube.com/shorts/GE-_9yAiCy4
-- https://reactiver.dev/where-did-the-name-react-come-from/
+- [React 기초 0강 : 리액트왜 쓰는지 알려줌](https://www.youtube.com/watch?v=LclObYwGj90)
+- [React 기본 강좌 1-1. 리액트를 왜 쓰는가](https://www.youtube.com/watch?v=V3QsSrldHqI)
+- [React는 왜 이름이 리액트일까요?](https://www.youtube.com/shorts/GE-_9yAiCy4)
+- [React는 왜 React일까?](https://reactiver.dev/where-did-the-name-react-come-from/)

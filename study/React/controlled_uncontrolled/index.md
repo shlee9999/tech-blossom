@@ -75,3 +75,8 @@ export default function UncontrolledForm() {
 | 구현 복잡도 | 복잡              | 단순                |
 | 코드량      | 많음              | 적음                |
 | SSOT 준수   | O                 | X                   |
+
+## 참고
+
+- [React - 비제어 컴포넌트](https://ko.legacy.reactjs.org/docs/uncontrolled-components.html)
+- [벨로그 - 제어 컴포넌트와 비제어 컴포넌트의 차이점 톺아보기](https://velog.io/@yukyung/React-%EC%A0%9C%EC%96%B4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%99%80-%EB%B9%84%EC%A0%9C%EC%96%B4-%EC%BB%B4%ED%8F%AC%EB%84%8C%ED%8A%B8%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90-%ED%86%BA%EC%95%84%EB%B3%B4%EA%B8%B0)
