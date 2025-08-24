@@ -11,7 +11,7 @@ export function Card({ children, className, onClick }: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-2xl shadow-lg overflow-hidden p-8',
+        'rounded-2xl shadow-lg overflow-hidden p-6 lg:p-8',
         'transition-transform hover:scale-[1.02] relative',
         'bg-white dark:bg-gray-800',
         'border border-gray-200 dark:border-gray-700',
