@@ -337,7 +337,7 @@ export default function HomePage(): ReactNode {
               <div className={cn('space-y-6')}>
                 <div className={cn('border-l-2 border-blue-200')}>
                   <h3 className={cn('text-xl font-semibold text-gray-900')}>
-                    동국대학교 정보통신공학과
+                    동국대학교(서울) 졸업
                   </h3>
                   <p className={cn('text-gray-500 text-sm mb-2')}>
                     2018.03 ~ 2024.02
@@ -347,7 +347,7 @@ export default function HomePage(): ReactNode {
                       'list-disc pl-5 text-gray-600 space-y-1 mb-0'
                     )}
                   >
-                    <li>학사 졸업</li>
+                    <li>정보통신공학과</li>
                     <li>전체 평균 : 3.82/4.5</li>
                     <li>전공 평균 : 3.86/4.5</li>
                   </ul>
