@@ -142,9 +142,10 @@ function HomepageHeader() {
             'max-w-2xl mx-auto'
           )}
         >
-          사용자 경험을 중시하는 열정적인 웹 개발자
+          <span>사용자 경험을 중시하는</span>{' '}
+          <span className='whitespace-pre'>열정적인 웹 개발자</span>
           <br />
-          <span className='text-lg text-white/70'>
+          <span className='text-lg text-white/70 whitespace-nowrap'>
             React • TypeScript • 사용자 중심 설계
           </span>
         </p>
