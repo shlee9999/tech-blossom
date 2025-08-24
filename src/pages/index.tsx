@@ -24,18 +24,80 @@ function HomepageHeader() {
     <header
       className={cn(
         'relative min-h-[calc(100vh-var(--ifm-navbar-height))] flex items-center justify-center overflow-hidden',
-        'bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb]',
-        'before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/20 before:to-transparent',
-        'after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_0%,_transparent_50%)]'
+        // 더 세련된 다층 그라데이션 배경
+        'bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900',
+        'before:absolute before:inset-0 before:bg-gradient-to-tr before:from-blue-500/20 before:via-purple-500/30 before:to-pink-500/20',
+        'after:absolute after:inset-0 after:bg-[radial-gradient(ellipse_at_center,_transparent_0%,_rgba(0,0,0,0.1)_100%)]'
       )}
     >
-      {/* 배경 장식 요소들 */}
+      {/* 동적 배경 그리드 패턴 */}
+      <div
+        className='absolute inset-0 opacity-20'
+        style={{
+          backgroundImage: `
+            linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)
+          `,
+          backgroundSize: '50px 50px',
+          animation: 'grid-move 20s linear infinite',
+        }}
+      ></div>
+
+      {/* 복합 배경 장식 요소들 */}
       <div className='absolute inset-0 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse'></div>
-        <div className='absolute -bottom-40 -left-40 w-96 h-96 bg-purple-300/20 rounded-full blur-3xl animate-pulse delay-1000'></div>
+        {/* 주요 오브 효과들 */}
+        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/30 to-cyan-400/20 rounded-full blur-3xl animate-pulse'></div>
+        <div className='absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-gradient-to-tr from-purple-400/25 to-pink-400/15 rounded-full blur-3xl animate-pulse delay-1000'></div>
+        <div className='absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-indigo-400/20 to-purple-400/15 rounded-full blur-2xl animate-pulse delay-500'></div>
+
+        {/* 회전하는 링 효과 */}
         <div
-          className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-blue-400/10 to-purple-400/10 rounded-full blur-3xl animate-spin'
-          style={{ animationDuration: '20s' }}
+          className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]'
+          style={{ animation: 'rotate-slow 30s linear infinite' }}
+        >
+          <div className='absolute inset-0 rounded-full border border-white/5'></div>
+          <div className='absolute inset-8 rounded-full border border-blue-400/10'></div>
+          <div className='absolute inset-16 rounded-full border border-purple-400/10'></div>
+        </div>
+
+        {/* 움직이는 그라데이션 오브들 */}
+        <div
+          className='absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-emerald-400/20 to-teal-400/10 rounded-full blur-2xl'
+          style={{ animation: 'float 15s ease-in-out infinite' }}
+        ></div>
+        <div
+          className='absolute bottom-1/3 left-1/3 w-80 h-80 bg-gradient-to-tr from-rose-400/15 to-orange-400/10 rounded-full blur-2xl'
+          style={{ animation: 'float 18s ease-in-out infinite reverse' }}
+        ></div>
+
+        {/* 파티클 효과 */}
+        <div className='absolute inset-0'>
+          {Array.from({ length: 20 }).map((_, i) => (
+            <div
+              key={i}
+              className='absolute w-1 h-1 bg-white rounded-full opacity-30'
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animation: `twinkle ${
+                  2 + Math.random() * 3
+                }s ease-in-out infinite`,
+                animationDelay: `${Math.random() * 2}s`,
+              }}
+            ></div>
+          ))}
+        </div>
+
+        {/* 빛 줄기 효과 */}
+        <div
+          className='absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-white/20 via-transparent to-transparent'
+          style={{ animation: 'beam-sweep 8s ease-in-out infinite' }}
+        ></div>
+        <div
+          className='absolute left-0 top-1/2 -translate-y-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent'
+          style={{
+            animation: 'beam-sweep-horizontal 10s ease-in-out infinite',
+          }}
         ></div>
       </div>
 
