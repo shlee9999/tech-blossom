@@ -143,7 +143,8 @@ const config: Config = {
         },
         {
           href: 'https://github.com/shlee9999/tech-blossom',
-          label: 'GitHub',
+          className: 'header-github-link',
+          'aria-label': 'GitHub repository',
           position: 'right',
         },
       ],

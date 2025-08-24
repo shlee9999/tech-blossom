@@ -263,8 +263,8 @@ export default function HomePage(): ReactNode {
                     팀 지식 공유 및 협업 효율 강화
                   </li>
                   <li>
-                    지속적 리팩토링을 통해 컴포넌트 및 아키텍처의 타입 안정성
-                    강화
+                    지속적 리팩토링을 통해 컴포넌트 및 아키텍처의{' '}
+                    <strong>타입 안정성</strong> 강화
                   </li>
                   <li>
                     GitLab 이슈 기반 체계적 <strong>협업</strong>으로 팀과
