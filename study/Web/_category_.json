@@ -1,5 +1,8 @@
 {
   "label": "Web",
   "position": 6,
-  "collapsed": false
+  "collapsed": false,
+  "link": {
+    "type": "generated-index"
+  }
 }

@@ -1,4 +1,7 @@
 {
   "position": 1,
-  "collapsed": false
+  "collapsed": false,
+  "link": {
+    "type": "generated-index"
+  }
 }
