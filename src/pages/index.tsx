@@ -17,6 +17,8 @@ import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
 import ProjectCard from '@site/src/components/ProjectCard';
+import { EDUCATIONS } from '@site/src/data/educations';
+import { AWARDS } from '@site/src/data/awards';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
@@ -301,192 +303,34 @@ export default function HomePage(): ReactNode {
         {/* 교육 섹션 */}
         <SectionLayout title='교육 및 자격증' icon={School}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
-            <Card>
-              <div className={cn('space-y-6')}>
-                <div
-                  className={cn(
-                    'border-l-2 border-blue-200 dark:border-blue-600'
-                  )}
-                >
-                  <h3
-                    className={cn(
-                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
-                    )}
-                  >
-                    동국대학교(서울) 졸업
-                  </h3>
-                  <p
-                    className={cn(
-                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
-                    )}
-                  >
-                    2018.03 ~ 2024.02
-                  </p>
-                  <ul
-                    className={cn(
-                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
-                    )}
-                  >
-                    <li>정보통신공학과</li>
-                    <li>전체 평균 : 3.82/4.5</li>
-                    <li>전공 평균 : 3.86/4.5</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-            <Card>
-              <div className={cn('space-y-6')}>
-                <div
-                  className={cn(
-                    'border-l-2 border-blue-200 dark:border-blue-600'
-                  )}
-                >
-                  <h3
-                    className={cn(
-                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
-                    )}
-                  >
-                    프로그래머스 데브코스
-                  </h3>
-                  <p
-                    className={cn(
-                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
-                    )}
-                  >
-                    2024.07 ~ 2024.12
-                  </p>
-                  <ul
-                    className={cn(
-                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
-                    )}
-                  >
-                    <li>4개 프로젝트 개발 경험</li>
-                    <li>모던 자바스크립트 딥 다이브 스터디</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-            <Card>
-              <div className={cn('space-y-6')}>
-                <div
-                  className={cn(
-                    'border-l-2 border-blue-200 dark:border-blue-600'
-                  )}
-                >
-                  <h3
-                    className={cn(
-                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
-                    )}
-                  >
-                    정보처리기사 자격증
-                  </h3>
-                  <p
-                    className={cn(
-                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
-                    )}
-                  >
-                    2023.06
-                  </p>
-                  <ul
-                    className={cn(
-                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
-                    )}
-                  >
-                    <li>국가기술자격증 취득</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
-
-            <Card>
-              <div className={cn('space-y-6')}>
-                <div
-                  className={cn(
-                    'border-l-2 border-blue-200 dark:border-blue-600'
-                  )}
-                >
-                  <h3
-                    className={cn(
-                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
-                    )}
-                  >
-                    삼성전자 DX부문 동계 SW 역량강화 특강
-                  </h3>
-                  <p
-                    className={cn(
-                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
-                    )}
-                  >
-                    2023.01 ~ 2023.02
-                  </p>
-                  <ul
-                    className={cn(
-                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
-                    )}
-                  >
-                    <li>Java를 이용한 알고리즘 학습</li>
-                  </ul>
-                </div>
-              </div>
-            </Card>
+            {EDUCATIONS.map((education, idx) => (
+              <Card key={idx}>
+                <Card.Title>{education.title}</Card.Title>
+                <Card.Period>{education.period}</Card.Period>
+                <Card.List>
+                  {education.items.map((item, idx) => (
+                    <Card.Item key={idx}>{item}</Card.Item>
+                  ))}
+                </Card.List>
+              </Card>
+            ))}
           </div>
         </SectionLayout>
 
         {/* 수상 경력 섹션 */}
         <SectionLayout title='수상 경력' icon={Trophy}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
-            <Card
-            // onClick={() => {
-            //   alert({
-            //     content: (
-            //       <div>
-            //         <h3>데브코스 성적 우수상</h3>
-            //         <p>
-            //           프로그래머스 데브코스에 성실히 참여하여 성적 1등을
-            //           달성했습니다.
-            //         </p>
-            //         <p>2024.12</p>
-
-            //         {/* todo: 이미지 추가 */}
-            //       </div>
-            //     ),
-            //   });
-            // }}
-            >
-              <h3
-                className={cn(
-                  'text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'
-                )}
-              >
-                데브코스 성적 우수상
-              </h3>
-              <p
-                className={cn('text-gray-500 dark:text-gray-400 text-sm mb-2')}
-              >
-                프로그래머스 데브코스에 성실히 참여하여 성적 1등을 달성했습니다.
-              </p>
-              <span className={cn('text-gray-500 dark:text-gray-400 text-sm ')}>
-                2024.12
-              </span>
-            </Card>
-            <Card>
-              <h3
-                className={cn(
-                  'text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'
-                )}
-              >
-                데브코스 프로젝트 인기상
-              </h3>
-              <p
-                className={cn('text-gray-500 dark:text-gray-400 text-sm mb-2')}
-              >
-                프로그래머스 데브코스의 최종 프로젝트에서 13팀 중 3팀에게 주는
-                인기상을 수여받았습니다.
-              </p>
-              <span className={cn('text-gray-500 dark:text-gray-400 text-sm ')}>
-                2024.12
-              </span>
-            </Card>
+            {AWARDS.map((award, idx) => (
+              <Card key={idx}>
+                <Card.Title>{award.title}</Card.Title>
+                <Card.Period>{award.period}</Card.Period>
+                <Card.List>
+                  {award.items.map((item, idx) => (
+                    <Card.Item key={idx}>{item}</Card.Item>
+                  ))}
+                </Card.List>
+              </Card>
+            ))}
           </div>
         </SectionLayout>
 
