@@ -140,53 +140,124 @@ export default function HomePage(): ReactNode {
         {/* 소개 섹션 */}
         <SectionLayout icon={User} title='소개'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
-            <p className={cn('text-lg leading-relaxed text-gray-600')}>
-              <span className={cn('font-bold text-2xl')}>
-                👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
-              </span>
-              <br />
-              <span className={cn('block mt-3')}>
-                사용자 경험과 견고한 아키텍처를 최우선으로 하는 프론트엔드
-                개발자입니다.
-                <br />
-                현재 <strong>디리아</strong>(2025.02~)에서 재직하며{' '}
-                <strong>
-                  NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
-                </strong>
-                의 프론트엔드 개발을 전담하고 있습니다. 현업에서는 신뢰할 수
-                있는 컴포넌트 설계와 클린 코드 작성을 목표로, 구두 피드백뿐만
-                아니라 GitLab 이슈 기반 협업을 통해 팀과 고객사가 모두 만족할 수
-                있는 결과물을 만들어내고 있습니다. 특히 복잡한 중첩 구조의{' '}
-                <strong>MDI 페이지 구조를 Redux 기반으로 설계·구현</strong>하며,
-                솔루션 환경에 최적화된 프론트엔드 라이브러리로서의 역할을
-                수행하고 있습니다.
-                <br />
-                또한, 개인적으로는{' '}
-                <a
-                  href='https://www.npmjs.com/package/react-useful-kit'
-                  target='_blank'
-                  className={cn('text-blue-500 underline')}
-                  rel='noreferrer'
-                >
-                  React Useful Kit
-                </a>{' '}
-                라이브러리를 개발하며, 재사용 가능한 컴포넌트와 유틸리티 제공을
-                통해 오픈소스 생태계에도 기여하고 있습니다.
-              </span>
+            <div className={cn('space-y-8')}>
+              {/* 인사말 */}
+              <div className={cn('text-center')}>
+                <h2 className={cn('font-bold text-2xl text-gray-800 mb-2')}>
+                  👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
+                </h2>
+                <p className={cn('text-lg text-gray-600')}>
+                  사용자 경험과 견고한 아키텍처를 최우선으로 하는 개발자입니다.
+                </p>
+              </div>
 
-              <span className={cn('block mt-6 text-gray-700')}>
-                <strong>이전 경험</strong>으로는 React 기반 주요 프로젝트들을
-                성공적으로 리드하며 팀 협업 역량을 강화했습니다. Redux와 React
-                Query를 활용한 효율적인 상태 관리 및 데이터 핸들링에 강점을
-                지니고 있으며, Jest·React Testing Library를 통한 테스트 주도
-                개발(TDD)에도 집중해 왔습니다.
-                <br />
-                또한 웹 성능 최적화에도 깊은 관심을 가지고 있어, Lighthouse
-                분석을 바탕으로{' '}
-                <strong>LCP(Largest Contentful Paint) 개선</strong>을 추진하며
-                사용자 경험 향상에 기여했습니다.
-              </span>
-            </p>
+              {/* 현재 업무 */}
+              <div
+                className={cn(
+                  'bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400'
+                )}
+              >
+                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                  🏢 현재 업무
+                </h3>
+                <p className={cn('text-gray-700 mb-3')}>
+                  <strong className={cn('text-blue-600')}>디리아</strong>
+                  (2025.02~)에서{' '}
+                  <strong>
+                    NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
+                  </strong>
+                  의 프론트엔드 개발을 전담하고 있습니다.
+                </p>
+                <ul className={cn('space-y-2 text-gray-600')}>
+                  <li>
+                    솔루션에 최적화된{' '}
+                    <strong>프론트엔드 아키텍처 직접 설계</strong>
+                  </li>
+                  <li>
+                    페이지 50개 이상의 <strong>대규모 프로젝트</strong>
+                  </li>
+                  <li>
+                    AI 사용이 제한된 <strong>폐쇄망 환경</strong>에서 개발
+                  </li>
+                  <li>
+                    지속적 리팩토링을 통해 컴포넌트 및 아키텍처의 타입 안정성
+                    강화
+                  </li>
+                  <li>
+                    GitLab 이슈 기반 체계적 <strong>협업</strong>으로 팀과
+                    고객사 만족도 향상
+                  </li>
+                  <li>
+                    지속적인 <strong>피드백</strong>을 통한 개선 및 협업 효율
+                    강화
+                  </li>
+                  <li>
+                    <strong>문서화 및 컴포넌트 Playground 제공</strong>을 통한
+                    팀 지식 공유 및 협업 효율 강화
+                  </li>
+                </ul>
+              </div>
+
+              {/* 오픈소스 기여 */}
+              <div
+                className={cn(
+                  'bg-green-50 p-6 rounded-lg border-l-4 border-green-400'
+                )}
+              >
+                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                  🚀 오픈소스 기여
+                </h3>
+                <span className={cn('text-gray-700')}>
+                  <a
+                    href='https://www.npmjs.com/package/react-useful-kit'
+                    target='_blank'
+                    className={cn(
+                      'text-green-600 font-semibold underline hover:text-green-700'
+                    )}
+                    rel='noreferrer'
+                  >
+                    React Useful Kit
+                  </a>{' '}
+                  라이브러리를 개발하여 재사용 가능한 컴포넌트와 유틸리티를
+                  제공하며, 오픈소스 생태계에 기여하고 있습니다.
+                </span>
+              </div>
+
+              {/* 기술적 전문성 */}
+              <div
+                className={cn(
+                  'bg-purple-50 p-6 rounded-lg border-l-4 border-purple-400'
+                )}
+              >
+                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                  💻 기술적 전문성
+                </h3>
+                <ul className={cn('space-y-3 text-gray-700')}>
+                  <li>
+                    <strong>아키텍처 설계</strong>: 현업 대규모 프로젝트에서
+                    솔루션에 최적화된 프론트엔드 아키텍처 설계 경험
+                  </li>
+                  <li>
+                    <strong>프로젝트 리더십</strong>: React 기반 주요
+                    프로젝트들을 성공적으로 리드하며 팀 협업 역량 강화
+                  </li>
+                  <li>
+                    <strong>상태 관리</strong>: Redux와 React Query를 활용한
+                    클라이언트, 서버 상태 관리 및 데이터 핸들링
+                  </li>
+                  <li>
+                    <strong>성능 모니터링</strong>: Lighthouse CI을 통한
+                    주기적인
+                    <strong> LCP(Largest Contentful Paint) 모니터링</strong>
+                    으로 사용자 경험 개선 방향 제시
+                  </li>
+                  <li>
+                    <strong>테스트</strong>: Storybook, Jest, React Testing
+                    Library를 통한 테스팅 경험
+                  </li>
+                </ul>
+              </div>
+            </div>
           </Card>
         </SectionLayout>
 
