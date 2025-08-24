@@ -180,6 +180,10 @@ export default function HomePage(): ReactNode {
                     AI 사용이 제한된 <strong>폐쇄망 환경</strong>에서 개발
                   </li>
                   <li>
+                    <strong>문서화 및 컴포넌트 Playground 제공</strong>을 통한
+                    팀 지식 공유 및 협업 효율 강화
+                  </li>
+                  <li>
                     지속적 리팩토링을 통해 컴포넌트 및 아키텍처의 타입 안정성
                     강화
                   </li>
@@ -190,10 +194,6 @@ export default function HomePage(): ReactNode {
                   <li>
                     지속적인 <strong>피드백</strong>을 통한 개선 및 협업 효율
                     강화
-                  </li>
-                  <li>
-                    <strong>문서화 및 컴포넌트 Playground 제공</strong>을 통한
-                    팀 지식 공유 및 협업 효율 강화
                   </li>
                 </ul>
               </div>
@@ -248,7 +248,7 @@ export default function HomePage(): ReactNode {
                   <li>
                     <strong>성능 모니터링</strong>: Lighthouse CI을 통한
                     주기적인
-                    <strong> LCP(Largest Contentful Paint) 모니터링</strong>
+                    <strong> 성능 모니터링</strong>
                     으로 사용자 경험 개선 방향 제시
                   </li>
                   <li>
@@ -331,8 +331,29 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 교육 섹션 */}
-        <SectionLayout title='교육' icon={School}>
+        <SectionLayout title='교육 및 자격증' icon={School}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
+            <Card>
+              <div className={cn('space-y-6')}>
+                <div className={cn('border-l-2 border-blue-200')}>
+                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                    동국대학교 정보통신공학과
+                  </h3>
+                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                    2018.03 ~ 2024.02
+                  </p>
+                  <ul
+                    className={cn(
+                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                    )}
+                  >
+                    <li>학사 졸업</li>
+                    <li>전체 평균 : 3.82/4.5</li>
+                    <li>전공 평균 : 3.86/4.5</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
             <Card>
               <div className={cn('space-y-6')}>
                 <div className={cn('border-l-2 border-blue-200')}>
@@ -342,7 +363,11 @@ export default function HomePage(): ReactNode {
                   <p className={cn('text-gray-500 text-sm mb-2')}>
                     2024.07 ~ 2024.12
                   </p>
-                  <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
+                  <ul
+                    className={cn(
+                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                    )}
+                  >
                     <li>4개 프로젝트 개발 경험</li>
                     <li>모던 자바스크립트 딥 다이브 스터디</li>
                   </ul>
@@ -353,12 +378,34 @@ export default function HomePage(): ReactNode {
               <div className={cn('space-y-6')}>
                 <div className={cn('border-l-2 border-blue-200')}>
                   <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                    정보처리기사 자격증
+                  </h3>
+                  <p className={cn('text-gray-500 text-sm mb-2')}>2023.06</p>
+                  <ul
+                    className={cn(
+                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                    )}
+                  >
+                    <li>국가기술자격증 취득</li>
+                  </ul>
+                </div>
+              </div>
+            </Card>
+
+            <Card>
+              <div className={cn('space-y-6')}>
+                <div className={cn('border-l-2 border-blue-200')}>
+                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
                     삼성전자 DX부문 동계 SW 역량강화 특강
                   </h3>
                   <p className={cn('text-gray-500 text-sm mb-2')}>
                     2023.01 ~ 2023.02
                   </p>
-                  <ul className={cn('list-disc pl-5 text-gray-600 space-y-1')}>
+                  <ul
+                    className={cn(
+                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                    )}
+                  >
                     <li>Java를 이용한 알고리즘 학습</li>
                   </ul>
                 </div>
@@ -394,7 +441,7 @@ export default function HomePage(): ReactNode {
               <p className={cn('text-gray-500 text-sm mb-2')}>
                 프로그래머스 데브코스에 성실히 참여하여 성적 1등을 달성했습니다.
               </p>
-              <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
+              <span className={cn('text-gray-500 text-sm ')}>2024.12</span>
             </Card>
             <Card>
               <h3 className={cn('text-xl font-semibold mb-2 text-gray-900 ')}>
@@ -404,7 +451,7 @@ export default function HomePage(): ReactNode {
                 프로그래머스 데브코스의 최종 프로젝트에서 13팀 중 3팀에게 주는
                 인기상을 수여받았습니다.
               </p>
-              <p className={cn('text-gray-500 text-sm mb-4')}>2024.12</p>
+              <span className={cn('text-gray-500 text-sm ')}>2024.12</span>
             </Card>
           </div>
         </SectionLayout>
