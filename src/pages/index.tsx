@@ -16,6 +16,7 @@ import { Card } from '@site/src/components/Card';
 import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
+import ProjectCard from '@site/src/components/ProjectCard';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
@@ -292,81 +293,7 @@ export default function HomePage(): ReactNode {
         <SectionLayout title='프로젝트' icon={Briefcase}>
           <div className={cn('space-y-8')}>
             {PROJECTS.map((project, idx) => (
-              <Card key={idx} className='flex gap-4 justify-between'>
-                <div className={cn('flex-[3]')}>
-                  <div className={cn('flex justify-between items-start mb-4')}>
-                    <div>
-                      <Link
-                        to={`/project/${project.path}`}
-                        className={cn(
-                          '!no-underline text-black dark:text-white'
-                        )}
-                      >
-                        <h3 className={cn('text-xl font-bold mb-2')}>
-                          {project.title}
-                        </h3>{' '}
-                      </Link>
-                      <p
-                        className={cn(
-                          'text-gray-500 dark:text-gray-400 text-sm mb-3'
-                        )}
-                      >
-                        {project.period}
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className={cn('mb-4')}>
-                    <div className={cn('flex flex-wrap gap-2 mb-4')}>
-                      {project.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className={cn(
-                            'px-3 py-1 bg-blue-100 dark:bg-blue-800/30 text-blue-800 dark:text-blue-300 rounded-full text-sm'
-                          )}
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-
-                    <ul className={cn('space-y-2')}>
-                      {project.contribution.map((item, i) => (
-                        <li
-                          key={i}
-                          className={cn(
-                            'flex items-start text-gray-600 dark:text-gray-400'
-                          )}
-                        >
-                          <span
-                            className={cn(
-                              'text-blue-500 dark:text-blue-400 mr-2'
-                            )}
-                          >
-                            ▹
-                          </span>
-                          {item}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-                <div className='flex-[2]  items-center justify-center hidden lg:flex'>
-                  <div
-                    className='relative w-[50%]'
-                    style={{ paddingTop: '50%' }}
-                  >
-                    <img
-                      src={project.thumbnail}
-                      alt={project.title}
-                      draggable='false'
-                      className={cn(
-                        'absolute object-contain h-full w-full left-0 top-0 select-none'
-                      )}
-                    />
-                  </div>
-                </div>
-              </Card>
+              <ProjectCard key={idx} {...project} />
             ))}
           </div>
         </SectionLayout>

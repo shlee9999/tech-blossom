@@ -32,6 +32,12 @@ span {
   word-break: keep-all;
 }
 
+strong {
+  [data-theme='dark'] & {
+    color: var(--ifm-color-content);
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

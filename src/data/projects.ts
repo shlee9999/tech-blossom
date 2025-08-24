@@ -1,3 +1,5 @@
+import { ProjectCardProps } from '@site/src/components/ProjectCard';
+
 export const PROJECTS = [
   {
     title: 'DDang - 반려견 산책 매칭 서비스',
@@ -67,4 +69,4 @@ export const PROJECTS = [
     path: 'typingpro',
     thumbnail: '/project/typingpro-thumbnail.png',
   },
-];
+] satisfies ProjectCardProps[];

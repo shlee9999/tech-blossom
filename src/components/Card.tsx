@@ -2,7 +2,7 @@ import { cn } from '@site/src/utils/cn';
 import { ReactNode } from 'react';
 
 interface CardProps {
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   onClick?: () => void;
 }
