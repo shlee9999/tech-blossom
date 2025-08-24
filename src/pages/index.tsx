@@ -8,12 +8,12 @@ import { PROJECTS } from '@site/src/data/projects';
 import { cn } from '@site/src/utils/cn';
 import Layout from '@theme/Layout';
 import {
+  Award,
   BookOpen,
-  Briefcase,
+  FolderOpen,
   GitBranch,
-  School,
-  Trophy,
-  User,
+  GraduationCap,
+  Star,
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
@@ -107,7 +107,7 @@ function HomepageHeader() {
         <div className='mb-8 flex justify-center'>
           <div className='relative'>
             <div className='w-32 h-32 bg-gradient-to-r from-white/20 to-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-2xl'>
-              <User className='w-16 h-16 text-white/90' />
+              <Star className='w-16 h-16 text-white/90' />
             </div>
             <div className='absolute inset-0 rounded-full bg-gradient-to-r from-blue-400/50 to-purple-400/50 blur-xl animate-pulse'></div>
           </div>
@@ -205,7 +205,7 @@ export default function HomePage(): ReactNode {
         )}
       >
         {/* 소개 섹션 */}
-        <SectionLayout icon={User} title='Intro'>
+        <SectionLayout icon={Star} title='Intro'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
             <div className={cn('space-y-8')}>
               {/* 인사말 */}
@@ -351,7 +351,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 프로젝트 섹션 */}
-        <SectionLayout title='Projects' icon={Briefcase}>
+        <SectionLayout title='Projects' icon={FolderOpen}>
           <div className={cn('space-y-8')}>
             {PROJECTS.map((project, idx) => (
               <ProjectCard key={idx} {...project} />
@@ -360,7 +360,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 교육 섹션 */}
-        <SectionLayout title='Education' icon={School}>
+        <SectionLayout title='Education' icon={GraduationCap}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             {EDUCATIONS.map((education, idx) => (
               <Card key={idx}>
@@ -377,7 +377,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 수상 경력 섹션 */}
-        <SectionLayout title='Awards' icon={Trophy}>
+        <SectionLayout title='Awards' icon={Award}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             {AWARDS.map((award, idx) => (
               <Card key={idx}>

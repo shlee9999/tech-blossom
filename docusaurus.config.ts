@@ -110,9 +110,8 @@ const config: Config = {
     //todo Replace with your project's social card
     image: 'img/logo.svg',
     colorMode: {
-      defaultMode: 'light',
-      disableSwitch: false,
-      respectPrefersColorScheme: true,
+      defaultMode: 'dark',
+      disableSwitch: true,
     },
     navbar: {
       title: "Seonghoon's Tech Blossom",
