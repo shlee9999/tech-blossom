@@ -1,5 +1,6 @@
 import { cn } from '@site/src/utils/cn';
 import { ReactNode } from 'react';
+import Link from '@docusaurus/Link';
 
 interface CardProps {
   children?: ReactNode;
@@ -137,17 +138,33 @@ Card.Description = function Description({
 };
 
 // 링크
-Card.Link = function Link({
+Card.Link = function CardLink({
   children,
   className,
   href,
+  to,
   external = false,
 }: {
   children: ReactNode;
   className?: string;
   href?: string;
+  to?: string;
   external?: boolean;
 }) {
+  if (to) {
+    return (
+      <Link
+        to={to}
+        className={cn(
+          '!no-underline text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-400',
+          className
+        )}
+      >
+        {children}
+      </Link>
+    );
+  }
+
   return (
     <a
       href={href}
@@ -160,5 +177,91 @@ Card.Link = function Link({
     >
       {children}
     </a>
+  );
+};
+
+// 레이아웃 컨테이너
+Card.Layout = function Layout({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn('flex gap-4 justify-between', className)}>
+      {children}
+    </div>
+  );
+};
+
+// 메인 콘텐츠 영역
+Card.Main = function Main({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return <div className={cn('flex-[3] mb-0', className)}>{children}</div>;
+};
+
+// 썸네일 영역
+Card.Thumbnail = function Thumbnail({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) {
+  return (
+    <div className='flex-[2] items-center justify-center hidden lg:flex'>
+      <div className='relative w-[50%]' style={{ paddingTop: '50%' }}>
+        <img
+          src={src}
+          alt={alt}
+          draggable='false'
+          className={cn(
+            'absolute object-contain h-full w-full left-0 top-0 select-none',
+            className
+          )}
+        />
+      </div>
+    </div>
+  );
+};
+
+// 기술 스택 컨테이너
+Card.TechStack = function TechStack({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <div className={cn('flex flex-wrap gap-2 mb-4', className)}>{children}</div>
+  );
+};
+
+// 기술 태그
+Card.Tag = function Tag({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={cn(
+        'px-3 py-1 bg-blue-100 dark:bg-blue-800/30 text-blue-800 dark:text-blue-300 rounded-full text-sm',
+        className
+      )}
+    >
+      {children}
+    </span>
   );
 };
