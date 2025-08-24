@@ -1,24 +1,21 @@
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import type { ReactNode } from 'react';
+import { Card } from '@site/src/components/Card';
+import ProjectCard from '@site/src/components/ProjectCard';
+import { SectionLayout } from '@site/src/components/SectionLayout';
+import { AWARDS } from '@site/src/data/awards';
+import { EDUCATIONS } from '@site/src/data/educations';
+import { PROJECTS } from '@site/src/data/projects';
 import { cn } from '@site/src/utils/cn';
+import Layout from '@theme/Layout';
 import {
+  BookOpen,
   Briefcase,
+  GitBranch,
   School,
   Trophy,
-  Code,
-  BookOpen,
   User,
-  GitBranch,
-  Award,
 } from 'lucide-react';
-import { Card } from '@site/src/components/Card';
-import { SectionLayout } from '@site/src/components/SectionLayout';
-import { PROJECTS } from '@site/src/data/projects';
-import Link from '@docusaurus/Link';
-import ProjectCard from '@site/src/components/ProjectCard';
-import { EDUCATIONS } from '@site/src/data/educations';
-import { AWARDS } from '@site/src/data/awards';
+import type { ReactNode } from 'react';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
@@ -146,7 +143,7 @@ export default function HomePage(): ReactNode {
         )}
       >
         {/* 소개 섹션 */}
-        <SectionLayout icon={User} title='소개'>
+        <SectionLayout icon={User} title='Intro'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
             <div className={cn('space-y-8')}>
               {/* 인사말 */}
@@ -292,7 +289,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 프로젝트 섹션 */}
-        <SectionLayout title='프로젝트' icon={Briefcase}>
+        <SectionLayout title='Projects' icon={Briefcase}>
           <div className={cn('space-y-8')}>
             {PROJECTS.map((project, idx) => (
               <ProjectCard key={idx} {...project} />
@@ -301,7 +298,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 교육 섹션 */}
-        <SectionLayout title='교육 및 자격증' icon={School}>
+        <SectionLayout title='Education' icon={School}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             {EDUCATIONS.map((education, idx) => (
               <Card key={idx}>
@@ -318,7 +315,7 @@ export default function HomePage(): ReactNode {
         </SectionLayout>
 
         {/* 수상 경력 섹션 */}
-        <SectionLayout title='수상 경력' icon={Trophy}>
+        <SectionLayout title='Awards' icon={Trophy}>
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             {AWARDS.map((award, idx) => (
               <Card key={idx}>
@@ -333,82 +330,6 @@ export default function HomePage(): ReactNode {
             ))}
           </div>
         </SectionLayout>
-
-        {/* 핵심 역량 섹션 */}
-        {/* <SectionLayout icon={Code} title='핵심 역량'>
-          <div className={cn('grid md:grid-cols-2 gap-6 mb-6')}>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-full h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api?username=shlee9999&show_icons=true&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&icon_color=64748b&border_color=e2e8f0&hide_border=true'
-                alt="SeongHoon's GitHub stats"
-              />
-            </div>
-            <div className='shadow-lg w-full h-full flex items-stretch bg-gradient-to-r from-[#ffffff] to-[#f1f5f9] rounded-xl'>
-              <img
-                className='w-3/4 h-full object-contain'
-                src='https://github-readme-stats.vercel.app/api/top-langs/?username=shlee9999&layout=compact&bg_color=30,ffffff,f1f5f9&title_color=334155&text_color=475569&border_color=e2e8f0&hide_border=true'
-                alt='Top Languages'
-              />
-            </div>
-          </div>
-          <div className={cn('grid md:grid-cols-2 lg:grid-cols-3 gap-6')}>
-            {SKILL_CATEGORIES.map((category, idx) => (
-              <Card
-                key={idx}
-                className={cn(
-                  'relative overflow-hidden group',
-                  'bg-gradient-to-br from-white to-gray-50',
-                  'hover:shadow-xl transition-all duration-300',
-                  'border-l-4 border-transparent',
-                  'hover:border-l-blue-500'
-                )}
-              >
-                <div
-                  className={cn(
-                    'absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300',
-                    `bg-gradient-to-br ${category.color}`
-                  )}
-                />
-
-                <div className={cn('relative z-10 p-6')}>
-                  <div className={cn('flex  items-center gap-3 mb-5')}>
-                    <span
-                      className={cn(
-                        'w-12 h-12 rounded-full flex items-center justify-center text-xl',
-                        `bg-gradient-to-br ${category.color}`,
-                        'shadow-lg group-hover:scale-110 transition-transform duration-300'
-                      )}
-                    >
-                      {category.icon}
-                    </span>
-                    <h3 className={cn('text-lg font-bold text-gray-800')}>
-                      {category.title}
-                    </h3>
-                  </div>
-
-                  <div className={cn('flex flex-wrap gap-2')}>
-                    {category.skills.map((skill) => (
-                      <span
-                        key={skill}
-                        className={cn(
-                          'px-3 py-1 rounded-full text-sm font-medium',
-                          'bg-gray-200 text-gray-700',
-                          'hover:bg-blue-100 hover:text-blue-800',
-                          'transition-all duration-200',
-                          'border border-gray-200 hover:border-blue-300',
-                          'transform hover:scale-105'
-                        )}
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Card>
-            ))}
-          </div>
-        </SectionLayout> */}
       </main>
     </Layout>
   );
