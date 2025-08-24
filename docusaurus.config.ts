@@ -22,7 +22,7 @@ const config: Config = {
         id: 'study',
         path: 'study',
         routeBasePath: 'study',
-        sidebarPath: './sidebars.ts',
+        sidebarPath: './study-sidebars.ts',
         editUrl: 'https://github.com/shlee9999/tech-blossom',
         showLastUpdateTime: true,
         showLastUpdateAuthor: true,
