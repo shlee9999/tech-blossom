@@ -24,6 +24,7 @@ export const PROJECTS = [
     ],
     link: 'https://ddang.pages.dev/',
     path: 'ddang',
+    thumbnail: '/project/ddang-thumbnail.png',
   },
   {
     title: 'PlanMate - 학습 관리 플랫폼',
@@ -47,7 +48,8 @@ export const PROJECTS = [
       'Jest와 React Testing Library를 활용한 컴포넌트 테스트 작성',
     ],
     link: 'https://github.com/shlee9999/PlanMate',
-    path: 'plan-mate',
+    path: 'planmate',
+    thumbnail: '/project/planmate-thumbnail.svg',
   },
   {
     title: 'TypingPro - 타자 연습 플랫폼',
@@ -62,6 +64,7 @@ export const PROJECTS = [
       'Context API를 활용한 전역 상태 관리',
     ],
     link: 'https://typing-pro-sigma.vercel.app/',
-    path: 'typing-pro',
+    path: 'typingpro',
+    thumbnail: '/project/typingpro-thumbnail.png',
   },
 ];

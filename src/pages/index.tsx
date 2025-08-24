@@ -194,8 +194,8 @@ export default function HomePage(): ReactNode {
         <SectionLayout title='프로젝트' icon={Briefcase}>
           <div className={cn('space-y-8')}>
             {PROJECTS.map((project, idx) => (
-              <Card key={idx}>
-                <div className={cn('')}>
+              <Card key={idx} className='flex gap-4 justify-between'>
+                <div className={cn('flex-[3]')}>
                   <div className={cn('flex justify-between items-start mb-4')}>
                     <div>
                       <Link
@@ -237,6 +237,21 @@ export default function HomePage(): ReactNode {
                         </li>
                       ))}
                     </ul>
+                  </div>
+                </div>
+                <div className='flex-[2] flex items-center justify-center'>
+                  <div
+                    className='relative w-[50%]'
+                    style={{ paddingTop: '50%' }}
+                  >
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      draggable='false'
+                      className={cn(
+                        'absolute object-contain h-full w-full left-0 top-0 select-none'
+                      )}
+                    />
                   </div>
                 </div>
               </Card>
