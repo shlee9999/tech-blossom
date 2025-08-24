@@ -7,14 +7,7 @@ import { EDUCATIONS } from '@site/src/data/educations';
 import { PROJECTS } from '@site/src/data/projects';
 import { cn } from '@site/src/utils/cn';
 import Layout from '@theme/Layout';
-import {
-  Award,
-  BookOpen,
-  FolderOpen,
-  GitBranch,
-  GraduationCap,
-  Star,
-} from 'lucide-react';
+import { Award, BookOpen, FolderOpen, GraduationCap, Star } from 'lucide-react';
 import type { ReactNode } from 'react';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
@@ -179,7 +172,13 @@ function HomepageHeader() {
             )}
             target='_blank'
           >
-            <GitBranch className='w-5 h-5 group-hover:rotate-12 transition-transform duration-300' />
+            <svg
+              className='w-6 h-6 group-hover:scale-110 transition-transform duration-300 fill-current'
+              viewBox='0 0 24 24'
+              fill='currentColor'
+            >
+              <path d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z' />
+            </svg>
             GitHub
           </a>
         </div>
@@ -207,148 +206,155 @@ export default function HomePage(): ReactNode {
       >
         {/* 소개 섹션 */}
         <SectionLayout icon={Star} title='Intro'>
-          <Card className={cn('rounded-2xl p-8 shadow-lg')}>
-            <div className={cn('space-y-8')}>
-              {/* 인사말 */}
-              <div className={cn('text-center')}>
-                <h2
-                  className={cn(
-                    'font-bold text-2xl text-gray-800 dark:text-gray-200 mb-2'
-                  )}
-                >
-                  👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
-                </h2>
-                <p className={cn('text-lg text-gray-600 dark:text-gray-400')}>
-                  사용자 경험과 견고한 아키텍처를 최우선으로 하는 개발자입니다.
-                </p>
-              </div>
-
-              {/* 현재 업무 */}
-              <div
+          <div className={cn('space-y-8')}>
+            {/* 인사말 */}
+            <div className={cn('text-center')}>
+              <h2
                 className={cn(
-                  'bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-400 dark:border-blue-500'
+                  'font-bold text-2xl text-gray-800 dark:text-gray-200 mb-2'
                 )}
               >
-                <h3
-                  className={cn(
-                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
-                  )}
-                >
-                  🏢 현재 업무
-                </h3>
-                <p className={cn('text-gray-700 dark:text-gray-300 mb-3')}>
-                  <strong className={cn('text-blue-600 dark:text-blue-400')}>
-                    디리아
-                  </strong>
-                  (2025.02~)에서{' '}
-                  <strong>
-                    NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
-                  </strong>
-                  의 프론트엔드 개발을 전담하고 있습니다.
-                </p>
-                <ul
-                  className={cn('space-y-2 text-gray-600 dark:text-gray-400')}
-                >
-                  <li>
-                    솔루션에 최적화된{' '}
-                    <strong>프론트엔드 아키텍처 직접 설계</strong>
-                  </li>
-                  <li>
-                    페이지 50개 이상의 <strong>대규모 프로젝트</strong>
-                  </li>
-                  <li>
-                    AI 사용이 제한된 <strong>폐쇄망 환경</strong>에서 개발
-                  </li>
-                  <li>
-                    <strong>문서화 및 컴포넌트 Playground 제공</strong>을 통한
-                    팀 지식 공유 및 협업 효율 강화
-                  </li>
-                  <li>
-                    지속적 리팩토링을 통해 컴포넌트 및 아키텍처의{' '}
-                    <strong>타입 안정성</strong> 강화
-                  </li>
-                  <li>
-                    GitLab 이슈 기반 체계적 <strong>협업</strong>으로 팀과
-                    고객사 만족도 향상
-                  </li>
-                  <li>
-                    지속적인 <strong>피드백</strong>을 통한 개선 및 협업 효율
-                    강화
-                  </li>
-                </ul>
-              </div>
-
-              {/* 오픈소스 기여 */}
-              <div
-                className={cn(
-                  'bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-400 dark:border-green-500'
-                )}
+                👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
+              </h2>
+              <p
+                className={cn('text-lg text-gray-600 dark:text-gray-400 mb-0')}
               >
-                <h3
-                  className={cn(
-                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
-                  )}
-                >
-                  🚀 오픈소스 기여
-                </h3>
-                <span className={cn('text-gray-700 dark:text-gray-300')}>
-                  <a
-                    href='https://www.npmjs.com/package/react-useful-kit'
-                    target='_blank'
-                    className={cn(
-                      'text-green-600 dark:text-green-400 font-semibold underline hover:text-green-700 dark:hover:text-green-300'
-                    )}
-                    rel='noreferrer'
-                  >
-                    React Useful Kit
-                  </a>{' '}
-                  라이브러리를 개발하여 재사용 가능한 컴포넌트와 유틸리티를
-                  제공하며, 오픈소스 생태계에 기여하고 있습니다.
-                </span>
-              </div>
-
-              {/* 기술적 전문성 */}
-              <div
-                className={cn(
-                  'bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-400 dark:border-purple-500'
-                )}
-              >
-                <h3
-                  className={cn(
-                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
-                  )}
-                >
-                  💻 기술적 전문성
-                </h3>
-                <ul
-                  className={cn('space-y-3 text-gray-700 dark:text-gray-300')}
-                >
-                  <li>
-                    <strong>아키텍처 설계</strong>: 현업 대규모 프로젝트에서
-                    솔루션에 최적화된 프론트엔드 아키텍처 설계 경험
-                  </li>
-                  <li>
-                    <strong>프로젝트 리더십</strong>: React 기반 주요
-                    프로젝트들을 성공적으로 리드하며 팀 협업 역량 강화
-                  </li>
-                  <li>
-                    <strong>상태 관리</strong>: Redux와 React Query를 활용한
-                    클라이언트, 서버 상태 관리 및 데이터 핸들링
-                  </li>
-                  <li>
-                    <strong>성능 모니터링</strong>: Lighthouse CI을 통한
-                    주기적인
-                    <strong> 성능 모니터링</strong>
-                    으로 사용자 경험 개선 방향 제시
-                  </li>
-                  <li>
-                    <strong>테스트</strong>: Storybook, Jest, React Testing
-                    Library를 통한 테스팅 경험
-                  </li>
-                </ul>
-              </div>
+                사용자 경험과 견고한 아키텍처를 최우선으로 하는 개발자입니다.
+              </p>
             </div>
-          </Card>
+            {/* 현재 업무 */}
+            <div
+              className={cn(
+                'bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-400 dark:border-blue-500'
+              )}
+            >
+              <h3
+                className={cn(
+                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                )}
+              >
+                🏢 현재 업무
+              </h3>
+              <p className={cn('text-gray-700 dark:text-gray-300 mb-3')}>
+                <strong className={cn('text-blue-600 dark:text-blue-400')}>
+                  디리아
+                </strong>
+                (2025.02~)에서{' '}
+                <strong>
+                  NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
+                </strong>
+                의 프론트엔드 개발을 전담하고 있습니다.
+              </p>
+              <ul
+                className={cn(
+                  'space-y-2 text-gray-600 dark:text-gray-400 mb-0'
+                )}
+              >
+                <li>
+                  솔루션에 최적화된{' '}
+                  <strong>프론트엔드 아키텍처 직접 설계</strong>
+                </li>
+                <li>
+                  페이지 50개 이상의 <strong>대규모 프로젝트</strong>
+                </li>
+                <li>
+                  AI 사용이 제한된 <strong>폐쇄망 환경</strong>에서 개발
+                </li>
+                <li>
+                  <strong>문서화 및 컴포넌트 Playground 제공</strong>을 통한 팀
+                  지식 공유 및 협업 효율 강화
+                </li>
+                <li>
+                  지속적 리팩토링을 통해 컴포넌트 및 아키텍처의{' '}
+                  <strong>타입 안정성</strong> 강화
+                </li>
+                <li>
+                  GitLab 이슈 기반 체계적 <strong>협업</strong>으로 팀과 고객사
+                  만족도 향상
+                </li>
+                <li>
+                  지속적인 <strong>피드백</strong>을 통한 개선 및 협업 효율 강화
+                </li>
+              </ul>
+            </div>
+            {/* 오픈소스 기여 */}
+            <div
+              className={cn(
+                'bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-400 dark:border-green-500'
+              )}
+            >
+              <h3
+                className={cn(
+                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                )}
+              >
+                🚀 오픈소스 기여
+              </h3>
+              <span className={cn('text-gray-700 dark:text-gray-300')}>
+                <a
+                  href='https://www.npmjs.com/package/react-useful-kit'
+                  target='_blank'
+                  className={cn(
+                    'text-green-600 dark:text-green-400 font-semibold underline hover:text-green-700 dark:hover:text-green-300'
+                  )}
+                  rel='noreferrer'
+                >
+                  React Useful Kit
+                </a>{' '}
+                라이브러리를 개발하여 재사용 가능한 컴포넌트와 유틸리티를
+                제공하며, 오픈소스 생태계에 기여하고 있습니다.
+              </span>
+            </div>
+            {/* 기술적 전문성 */}
+            <div
+              className={cn(
+                'bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-400 dark:border-purple-500'
+              )}
+            >
+              <h3
+                className={cn(
+                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                )}
+              >
+                💻 기술적 전문성
+              </h3>
+              <ul
+                className={cn(
+                  'space-y-3 text-gray-700 dark:text-gray-300 mb-0'
+                )}
+              >
+                <li>
+                  <strong>아키텍처 설계</strong>: 현업 대규모 프로젝트에서
+                  솔루션에 최적화된 프론트엔드 아키텍처 설계 경험
+                </li>
+                <li>
+                  <strong>프로젝트 리더십</strong>: React 기반 주요 프로젝트들을
+                  성공적으로 리드하며 팀 협업 역량 강화
+                </li>
+                <li>
+                  <strong>언어에 대한 깊은 이해</strong>: JavaScript와
+                  TypeScript에 대한 깊은 이해를 바탕으로 장기적 유지보수성을
+                  고려한 코드 설계 지향
+                </li>
+                <li>
+                  <strong>Git Flow</strong>: 프로젝트 Git Flow 직접 설계 및 적용
+                  경험
+                </li>
+                <li>
+                  <strong>상태 관리</strong>: Redux와 React Query를 활용한
+                  클라이언트, 서버 상태 관리 및 데이터 핸들링
+                </li>
+                <li>
+                  <strong>성능 모니터링</strong>: Lighthouse CI 설계하여
+                  주기적인 성능 모니터링으로 사용자 경험 개선 방향 제시한 경험
+                </li>
+                <li>
+                  <strong>테스트</strong>: Storybook, Jest, React Testing
+                  Library를 통한 테스팅 경험
+                </li>
+              </ul>
+            </div>
+          </div>
         </SectionLayout>
 
         {/* 프로젝트 섹션 */}
