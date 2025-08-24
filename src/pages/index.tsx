@@ -132,21 +132,30 @@ export default function HomePage(): ReactNode {
     <Layout
       title={`${siteConfig.title} 포트폴리오`}
       description='프론트엔드 개발자 이성훈의 전문 포트폴리오'
-      wrapperClassName='bg-[#f9f9f9]'
+      wrapperClassName='bg-[#f9f9f9] dark:bg-gray-900'
     >
       <HomepageHeader />
 
-      <main id='main' className={cn('py-16 px-4 max-w-7xl mx-auto')}>
+      <main
+        id='main'
+        className={cn(
+          'py-16 px-4 max-w-7xl mx-auto text-gray-900 dark:text-gray-100'
+        )}
+      >
         {/* 소개 섹션 */}
         <SectionLayout icon={User} title='소개'>
           <Card className={cn('rounded-2xl p-8 shadow-lg')}>
             <div className={cn('space-y-8')}>
               {/* 인사말 */}
               <div className={cn('text-center')}>
-                <h2 className={cn('font-bold text-2xl text-gray-800 mb-2')}>
+                <h2
+                  className={cn(
+                    'font-bold text-2xl text-gray-800 dark:text-gray-200 mb-2'
+                  )}
+                >
                   👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
                 </h2>
-                <p className={cn('text-lg text-gray-600')}>
+                <p className={cn('text-lg text-gray-600 dark:text-gray-400')}>
                   사용자 경험과 견고한 아키텍처를 최우선으로 하는 개발자입니다.
                 </p>
               </div>
@@ -154,21 +163,29 @@ export default function HomePage(): ReactNode {
               {/* 현재 업무 */}
               <div
                 className={cn(
-                  'bg-blue-50 p-6 rounded-lg border-l-4 border-blue-400'
+                  'bg-blue-50 dark:bg-blue-900/20 p-6 rounded-lg border-l-4 border-blue-400 dark:border-blue-500'
                 )}
               >
-                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                <h3
+                  className={cn(
+                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  )}
+                >
                   🏢 현재 업무
                 </h3>
-                <p className={cn('text-gray-700 mb-3')}>
-                  <strong className={cn('text-blue-600')}>디리아</strong>
+                <p className={cn('text-gray-700 dark:text-gray-300 mb-3')}>
+                  <strong className={cn('text-blue-600 dark:text-blue-400')}>
+                    디리아
+                  </strong>
                   (2025.02~)에서{' '}
                   <strong>
                     NH농협은행 차세대 대외MCA 시스템 솔루션 개발 프로젝트
                   </strong>
                   의 프론트엔드 개발을 전담하고 있습니다.
                 </p>
-                <ul className={cn('space-y-2 text-gray-600')}>
+                <ul
+                  className={cn('space-y-2 text-gray-600 dark:text-gray-400')}
+                >
                   <li>
                     솔루션에 최적화된{' '}
                     <strong>프론트엔드 아키텍처 직접 설계</strong>
@@ -201,18 +218,22 @@ export default function HomePage(): ReactNode {
               {/* 오픈소스 기여 */}
               <div
                 className={cn(
-                  'bg-green-50 p-6 rounded-lg border-l-4 border-green-400'
+                  'bg-green-50 dark:bg-green-900/20 p-6 rounded-lg border-l-4 border-green-400 dark:border-green-500'
                 )}
               >
-                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                <h3
+                  className={cn(
+                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  )}
+                >
                   🚀 오픈소스 기여
                 </h3>
-                <span className={cn('text-gray-700')}>
+                <span className={cn('text-gray-700 dark:text-gray-300')}>
                   <a
                     href='https://www.npmjs.com/package/react-useful-kit'
                     target='_blank'
                     className={cn(
-                      'text-green-600 font-semibold underline hover:text-green-700'
+                      'text-green-600 dark:text-green-400 font-semibold underline hover:text-green-700 dark:hover:text-green-300'
                     )}
                     rel='noreferrer'
                   >
@@ -226,13 +247,19 @@ export default function HomePage(): ReactNode {
               {/* 기술적 전문성 */}
               <div
                 className={cn(
-                  'bg-purple-50 p-6 rounded-lg border-l-4 border-purple-400'
+                  'bg-purple-50 dark:bg-purple-900/20 p-6 rounded-lg border-l-4 border-purple-400 dark:border-purple-500'
                 )}
               >
-                <h3 className={cn('font-semibold text-lg text-gray-800 mb-3')}>
+                <h3
+                  className={cn(
+                    'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  )}
+                >
                   💻 기술적 전문성
                 </h3>
-                <ul className={cn('space-y-3 text-gray-700')}>
+                <ul
+                  className={cn('space-y-3 text-gray-700 dark:text-gray-300')}
+                >
                   <li>
                     <strong>아키텍처 설계</strong>: 현업 대규모 프로젝트에서
                     솔루션에 최적화된 프론트엔드 아키텍처 설계 경험
@@ -271,13 +298,19 @@ export default function HomePage(): ReactNode {
                     <div>
                       <Link
                         to={`/project/${project.path}`}
-                        className={cn('!no-underline text-black')}
+                        className={cn(
+                          '!no-underline text-black dark:text-white'
+                        )}
                       >
                         <h3 className={cn('text-xl font-bold mb-2')}>
                           {project.title}
                         </h3>{' '}
                       </Link>
-                      <p className={cn('text-gray-500 text-sm mb-3')}>
+                      <p
+                        className={cn(
+                          'text-gray-500 dark:text-gray-400 text-sm mb-3'
+                        )}
+                      >
                         {project.period}
                       </p>
                     </div>
@@ -289,7 +322,7 @@ export default function HomePage(): ReactNode {
                         <span
                           key={tech}
                           className={cn(
-                            'px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm'
+                            'px-3 py-1 bg-blue-100 dark:bg-blue-800/30 text-blue-800 dark:text-blue-300 rounded-full text-sm'
                           )}
                         >
                           {tech}
@@ -301,9 +334,17 @@ export default function HomePage(): ReactNode {
                       {project.contribution.map((item, i) => (
                         <li
                           key={i}
-                          className={cn('flex items-start text-gray-600')}
+                          className={cn(
+                            'flex items-start text-gray-600 dark:text-gray-400'
+                          )}
                         >
-                          <span className={cn('text-blue-500 mr-2')}>▹</span>
+                          <span
+                            className={cn(
+                              'text-blue-500 dark:text-blue-400 mr-2'
+                            )}
+                          >
+                            ▹
+                          </span>
                           {item}
                         </li>
                       ))}
@@ -335,16 +376,28 @@ export default function HomePage(): ReactNode {
           <div className={cn('grid md:grid-cols-2 gap-6')}>
             <Card>
               <div className={cn('space-y-6')}>
-                <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                <div
+                  className={cn(
+                    'border-l-2 border-blue-200 dark:border-blue-600'
+                  )}
+                >
+                  <h3
+                    className={cn(
+                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
+                    )}
+                  >
                     동국대학교(서울) 졸업
                   </h3>
-                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                  <p
+                    className={cn(
+                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
+                    )}
+                  >
                     2018.03 ~ 2024.02
                   </p>
                   <ul
                     className={cn(
-                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
                     )}
                   >
                     <li>정보통신공학과</li>
@@ -356,16 +409,28 @@ export default function HomePage(): ReactNode {
             </Card>
             <Card>
               <div className={cn('space-y-6')}>
-                <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                <div
+                  className={cn(
+                    'border-l-2 border-blue-200 dark:border-blue-600'
+                  )}
+                >
+                  <h3
+                    className={cn(
+                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
+                    )}
+                  >
                     프로그래머스 데브코스
                   </h3>
-                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                  <p
+                    className={cn(
+                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
+                    )}
+                  >
                     2024.07 ~ 2024.12
                   </p>
                   <ul
                     className={cn(
-                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
                     )}
                   >
                     <li>4개 프로젝트 개발 경험</li>
@@ -376,14 +441,28 @@ export default function HomePage(): ReactNode {
             </Card>
             <Card>
               <div className={cn('space-y-6')}>
-                <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                <div
+                  className={cn(
+                    'border-l-2 border-blue-200 dark:border-blue-600'
+                  )}
+                >
+                  <h3
+                    className={cn(
+                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
+                    )}
+                  >
                     정보처리기사 자격증
                   </h3>
-                  <p className={cn('text-gray-500 text-sm mb-2')}>2023.06</p>
+                  <p
+                    className={cn(
+                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
+                    )}
+                  >
+                    2023.06
+                  </p>
                   <ul
                     className={cn(
-                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
                     )}
                   >
                     <li>국가기술자격증 취득</li>
@@ -394,16 +473,28 @@ export default function HomePage(): ReactNode {
 
             <Card>
               <div className={cn('space-y-6')}>
-                <div className={cn('border-l-2 border-blue-200')}>
-                  <h3 className={cn('text-xl font-semibold text-gray-900')}>
+                <div
+                  className={cn(
+                    'border-l-2 border-blue-200 dark:border-blue-600'
+                  )}
+                >
+                  <h3
+                    className={cn(
+                      'text-xl font-semibold text-gray-900 dark:text-gray-100'
+                    )}
+                  >
                     삼성전자 DX부문 동계 SW 역량강화 특강
                   </h3>
-                  <p className={cn('text-gray-500 text-sm mb-2')}>
+                  <p
+                    className={cn(
+                      'text-gray-500 dark:text-gray-400 text-sm mb-2'
+                    )}
+                  >
                     2023.01 ~ 2023.02
                   </p>
                   <ul
                     className={cn(
-                      'list-disc pl-5 text-gray-600 space-y-1 mb-0'
+                      'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 mb-0'
                     )}
                   >
                     <li>Java를 이용한 알고리즘 학습</li>
@@ -435,23 +526,39 @@ export default function HomePage(): ReactNode {
             //   });
             // }}
             >
-              <h3 className={cn('text-xl font-semibold mb-2 text-gray-900')}>
+              <h3
+                className={cn(
+                  'text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'
+                )}
+              >
                 데브코스 성적 우수상
               </h3>
-              <p className={cn('text-gray-500 text-sm mb-2')}>
+              <p
+                className={cn('text-gray-500 dark:text-gray-400 text-sm mb-2')}
+              >
                 프로그래머스 데브코스에 성실히 참여하여 성적 1등을 달성했습니다.
               </p>
-              <span className={cn('text-gray-500 text-sm ')}>2024.12</span>
+              <span className={cn('text-gray-500 dark:text-gray-400 text-sm ')}>
+                2024.12
+              </span>
             </Card>
             <Card>
-              <h3 className={cn('text-xl font-semibold mb-2 text-gray-900 ')}>
+              <h3
+                className={cn(
+                  'text-xl font-semibold mb-2 text-gray-900 dark:text-gray-100'
+                )}
+              >
                 데브코스 프로젝트 인기상
               </h3>
-              <p className={cn('text-gray-500 text-sm mb-2')}>
+              <p
+                className={cn('text-gray-500 dark:text-gray-400 text-sm mb-2')}
+              >
                 프로그래머스 데브코스의 최종 프로젝트에서 13팀 중 3팀에게 주는
                 인기상을 수여받았습니다.
               </p>
-              <span className={cn('text-gray-500 text-sm ')}>2024.12</span>
+              <span className={cn('text-gray-500 dark:text-gray-400 text-sm ')}>
+                2024.12
+              </span>
             </Card>
           </div>
         </SectionLayout>

@@ -109,6 +109,11 @@ const config: Config = {
   themeConfig: {
     //todo Replace with your project's social card
     image: 'img/logo.svg',
+    colorMode: {
+      defaultMode: 'light',
+      disableSwitch: false,
+      respectPrefersColorScheme: true,
+    },
     navbar: {
       title: "Seonghoon's Tech Blossom",
       logo: {

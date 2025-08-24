@@ -18,8 +18,12 @@ export function SectionLayout({
   return (
     <section className={cn('mb-20', className)}>
       <div className={cn('flex items-center mb-8')}>
-        <Icon className='w-8 h-8 mr-2 text-blue-600' />
-        <h2 className={cn('text-3xl font-bold text-gray-800')}>{title}</h2>
+        <Icon className='w-8 h-8 mr-2 text-blue-600 dark:text-blue-400' />
+        <h2
+          className={cn('text-3xl font-bold text-gray-800 dark:text-gray-200')}
+        >
+          {title}
+        </h2>
       </div>
       {children}
     </section>
