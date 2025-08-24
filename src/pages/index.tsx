@@ -23,7 +23,7 @@ function HomepageHeader() {
   return (
     <header
       className={cn(
-        'relative min-h-screen flex items-center justify-center overflow-hidden',
+        'relative min-h-[calc(100vh-var(--ifm-navbar-height))] flex items-center justify-center overflow-hidden',
         'bg-gradient-to-br from-[#667eea] via-[#764ba2] to-[#f093fb]',
         'before:absolute before:inset-0 before:bg-gradient-to-t before:from-black/20 before:to-transparent',
         'after:absolute after:inset-0 after:bg-[radial-gradient(circle_at_50%_50%,_rgba(255,255,255,0.1)_0%,_transparent_50%)]'
