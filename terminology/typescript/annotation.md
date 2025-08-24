@@ -1,3 +1,9 @@
+---
+id: annotation
+title: 타입 어노테이션
+hoverText: TypeScript에서 변수, 함수 매개변수, 반환값 등에 명시적으로 타입을 지정하는 것
+---
+
 # 타입 어노테이션
 
 ## 개요

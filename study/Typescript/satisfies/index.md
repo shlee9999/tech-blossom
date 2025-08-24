@@ -15,17 +15,17 @@ tags: [typescript, satisfies, type-checking]
 ```tsx
 const palette1 = {
   red: [255, 0, 0],
-  green: '#00ff00',
+  green: "#00ff00",
   bleu: [0, 0, 255], // 오타를 못잡는다.
 };
 ```
 
-### 타입 어노테이션 ":"
+### <TermTooltip termId="annotation">타입 어노테이션</TermTooltip> ":"
 
 ```tsx
 const palette2: Record<string, [number, number, number] | string> = {
   red: [255, 0, 0],
-  green: '#00ff00',
+  green: "#00ff00",
   bleu: [0, 0, 255], // 오타
 };
 // 타입추론: const palette2: Record<string, string | [number, number, number]>
@@ -48,7 +48,7 @@ palette2.green.toUpperCase(); //! Error
 ```tsx
 const palette3 = {
   red: [255, 0, 0],
-  green: '#00ff00',
+  green: "#00ff00",
   blue: [0, 0, 255],
 } satisfies Record<string, [number, number, number] | string>;
 /*

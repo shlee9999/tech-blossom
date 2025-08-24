@@ -1,6 +1,9 @@
 ---
+id: cn
+title: cn - className 정리 함수
 authors: [shlee]
 tags: [tailwind]
+hoverText: Tailwind CSS 클래스명을 조건부로 결합하고 중복을 처리하는 유틸리티 함수
 ---
 
 # cn - className 정리 함수
@@ -18,14 +21,14 @@ const Button = ({ text, className }: { text: string; className?: string }) => (
 ```
 
 하지만 className이 undefined이면 개발자 도구에서 `class="undefined"`로 포함된다는 것을 알게 되었다.  
-이를 해결하기 위해 일반적으로 <TermTooltip termId="cn">cn</TermTooltip>이라는 유틸 함수를 만들어 쓰는 것으로 보인다.
+이를 해결하기 위해 일반적으로 cn이라는 유틸 함수를 만들어 쓰는 것으로 보인다.
 ![Button with undefined class](./button-undefined.png)
 
 <!-- truncate -->
 
-## <TermTooltip termId="cn">cn</TermTooltip>
+## cn
 
-<TermTooltip termId="cn">cn</TermTooltip>은 classNames의 약자이며 주로 다음과 같이 작성한다.
+cn은 classNames의 약자이며 주로 다음과 같이 작성한다.
 
 ```
 //cn.ts
