@@ -16,7 +16,7 @@ import { Card } from '@site/src/components/Card';
 import { SectionLayout } from '@site/src/components/SectionLayout';
 import { PROJECTS } from '@site/src/data/projects';
 import Link from '@docusaurus/Link';
-import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
+// import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -239,7 +239,7 @@ export default function HomePage(): ReactNode {
                     </ul>
                   </div>
                 </div>
-                <div className='flex-[2] flex items-center justify-center'>
+                <div className='flex-[2]  items-center justify-center hidden lg:flex'>
                   <div
                     className='relative w-[50%]'
                     style={{ paddingTop: '50%' }}

@@ -5,13 +5,13 @@
 /* Pretendard */
 @font-face {
   font-family: Pretendard;
-  src: url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
 }
 
 /* Inter */
 @font-face {
   font-family: Inter;
-  src: url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+  src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 }
 
 body,
@@ -26,9 +26,10 @@ a,
 li,
 blockquote,
 span {
-  font-family: "Pretendard Variable", "Pretendard", "Inter", -apple-system,
-    BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell,
+  font-family: 'Pretendard Variable', 'Pretendard', 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
     sans-serif !important;
+  word-break: keep-all;
 }
 
 @layer base {
@@ -63,7 +64,7 @@ span {
     --ifm-heading-margin-bottom: 0;
   }
 
-  [data-theme="dark"] {
+  [data-theme='dark'] {
     --color-primary: #25c2a0;
     --color-primary-dark: #21af90;
     --color-primary-darker: #1fa588;
@@ -154,13 +155,13 @@ span {
 }
 
 /* 다크 모드에서의 용어 링크 */
-[data-theme="dark"] .term-link {
+[data-theme='dark'] .term-link {
   color: var(--ifm-color-content); /* 일반 텍스트색 */
   text-decoration-color: #fbbf24; /* underline만 노란색 */
   background-color: rgba(234, 179, 8, 0.15);
 }
 
-[data-theme="dark"] .term-link:hover {
+[data-theme='dark'] .term-link:hover {
   color: var(--ifm-color-content); /* 호버시에도 일반 텍스트색 유지 */
   text-decoration-color: #fcd34d; /* 호버시 더 밝은 노란색 underline */
   background-color: rgba(234, 179, 8, 0.25);
@@ -191,7 +192,7 @@ span {
 }
 
 /* 다크 모드 대응 */
-[data-theme="dark"] .term-tooltip {
+[data-theme='dark'] .term-tooltip {
   background: var(--ifm-background-color, #1c1e21);
   border-color: var(--ifm-color-emphasis-400, #444c56);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -211,7 +212,7 @@ span {
   text-underline-offset: 3px;
 }
 
-[data-theme="dark"] .tooltip-header {
+[data-theme='dark'] .tooltip-header {
   background: var(--ifm-color-primary-darkest);
   color: var(--ifm-color-primary-lightest);
   border-bottom-color: var(--ifm-color-emphasis-300);
@@ -228,7 +229,7 @@ span {
   gap: 8px;
 }
 
-[data-theme="dark"] .tooltip-content {
+[data-theme='dark'] .tooltip-content {
   background-color: var(--ifm-background-color, #1c1e21);
 }
 
@@ -245,12 +246,12 @@ span {
   border-top: 8px solid var(--ifm-color-emphasis-400, #d0d7de);
 }
 
-[data-theme="dark"] .tooltip-arrow {
+[data-theme='dark'] .tooltip-arrow {
   border-top-color: var(--ifm-color-emphasis-400, #444c56);
 }
 
 .tooltip-arrow::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -9px;
   left: -7px;
@@ -261,7 +262,7 @@ span {
   border-top: 7px solid #ffffff;
 }
 
-[data-theme="dark"] .tooltip-arrow::after {
+[data-theme='dark'] .tooltip-arrow::after {
   border-top-color: #1c1e21;
 }
 
