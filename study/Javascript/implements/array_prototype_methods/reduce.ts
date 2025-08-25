@@ -7,14 +7,14 @@ const reduce = function (arr, callback, initialValue) {
   return result;
 };
 
-["a", "b", "c"].reduce((acc, cur, index) => {
+['a', 'b', 'c'].reduce((acc, cur, index) => {
   acc[cur] = index;
   return acc;
 }, {});
 
 console.log(
   reduce(
-    ["a", "b", "c"],
+    ['a', 'b', 'c'],
     (acc, cur, index) => {
       acc[cur] = index;
       return acc;

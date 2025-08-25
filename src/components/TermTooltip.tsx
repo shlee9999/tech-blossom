@@ -1,6 +1,6 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
-import Link from "@docusaurus/Link";
-import { getTerminologyById, TerminologyItem } from "../data/terminology";
+import React, { useState, useRef, useEffect, useCallback } from 'react';
+import Link from '@docusaurus/Link';
+import { getTerminologyById, TerminologyItem } from '../data/terminology';
 // CSS는 custom.css에서 전역 임포트됨
 
 interface TermTooltipProps {
@@ -12,7 +12,7 @@ interface TermTooltipProps {
 export const TermTooltip: React.FC<TermTooltipProps> = ({
   termId,
   children,
-  className = "",
+  className = '',
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -27,7 +27,7 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
   useEffect(() => {
     const checkDarkMode = () => {
       setIsDarkMode(
-        document.documentElement.getAttribute("data-theme") === "dark"
+        document.documentElement.getAttribute('data-theme') === 'dark'
       );
     };
 
@@ -37,13 +37,13 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ["data-theme"],
+      attributeFilter: ['data-theme'],
     });
 
     return () => observer.disconnect();
   }, []);
 
-  const backgroundColor = isDarkMode ? "#1c1e21" : "#ffffff";
+  const backgroundColor = isDarkMode ? '#1c1e21' : '#ffffff';
 
   // 툴팁 위치 계산 함수
   const updateTooltipPosition = useCallback(() => {
@@ -82,15 +82,15 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
   // 스크롤/리사이즈 시 툴팁 위치 업데이트
   useEffect(() => {
     if (isVisible) {
-      window.addEventListener("scroll", updateTooltipPosition, {
+      window.addEventListener('scroll', updateTooltipPosition, {
         passive: true,
       });
-      window.addEventListener("resize", updateTooltipPosition, {
+      window.addEventListener('resize', updateTooltipPosition, {
         passive: true,
       });
       return () => {
-        window.removeEventListener("scroll", updateTooltipPosition);
-        window.removeEventListener("resize", updateTooltipPosition);
+        window.removeEventListener('scroll', updateTooltipPosition);
+        window.removeEventListener('resize', updateTooltipPosition);
       };
     }
   }, [isVisible, updateTooltipPosition]);
@@ -116,7 +116,7 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
     return (
       <Link to={`/terminology/${termId}`} className={className}>
         {children}
-        <span className="term-tooltip-link">자세히 보기 →</span>
+        <span className='term-tooltip-link'>자세히 보기 →</span>
       </Link>
     );
   }
@@ -136,9 +136,9 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
       {isVisible && (
         <div
           ref={tooltipRef}
-          className="term-tooltip"
+          className='term-tooltip'
           style={{
-            position: "fixed",
+            position: 'fixed',
             left: `${position.x}px`,
             top: `${position.y}px`,
             zIndex: 99999,
@@ -147,13 +147,13 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
           onMouseOver={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="tooltip-header">
+          <div className='tooltip-header'>
             <Link to={term.path} className={className}>
               <strong>{term.title}</strong>
             </Link>
           </div>
-          <div className="tooltip-content">{term.hoverText}</div>
-          <div className="tooltip-arrow" />
+          <div className='tooltip-content'>{term.hoverText}</div>
+          <div className='tooltip-arrow' />
         </div>
       )}
     </>

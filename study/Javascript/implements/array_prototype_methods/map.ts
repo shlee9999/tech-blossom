@@ -11,6 +11,6 @@ const arr = [1, 2, 3, 4, 5];
 
 console.log(
   map(arr, (item, index) => {
-    return item * 2 + " " + index;
+    return item * 2 + ' ' + index;
   })
 );

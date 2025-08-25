@@ -9,6 +9,7 @@ import { cn } from '@site/src/utils/cn';
 import Layout from '@theme/Layout';
 import { Award, BookOpen, FolderOpen, GraduationCap, Star } from 'lucide-react';
 import type { ReactNode } from 'react';
+import '../css/home.css';
 // import { SKILLS, SKILL_CATEGORIES } from '@site/src/data/skills';
 
 function HomepageHeader() {
@@ -216,9 +217,7 @@ export default function HomePage(): ReactNode {
               >
                 👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
               </h2>
-              <p
-                className={cn('text-lg text-gray-600 dark:text-gray-400 mb-0')}
-              >
+              <p className={cn('text-lg text-gray-600 dark:text-gray-400')}>
                 사용자 경험과 견고한 아키텍처를 최우선으로 하는 개발자입니다.
               </p>
             </div>
@@ -245,11 +244,7 @@ export default function HomePage(): ReactNode {
                 </strong>
                 의 프론트엔드 개발을 전담하고 있습니다.
               </p>
-              <ul
-                className={cn(
-                  'space-y-2 text-gray-600 dark:text-gray-400 mb-0'
-                )}
-              >
+              <ul className={cn('space-y-2 text-gray-600 dark:text-gray-400')}>
                 <li>
                   솔루션에 최적화된{' '}
                   <strong>프론트엔드 아키텍처 직접 설계</strong>
@@ -318,11 +313,7 @@ export default function HomePage(): ReactNode {
               >
                 💻 기술적 전문성
               </h3>
-              <ul
-                className={cn(
-                  'space-y-3 text-gray-700 dark:text-gray-300 mb-0'
-                )}
-              >
+              <ul className={cn('space-y-3 text-gray-700 dark:text-gray-300')}>
                 <li>
                   <strong>아키텍처 설계</strong>: 현업 대규모 프로젝트에서
                   솔루션에 최적화된 프론트엔드 아키텍처 설계 경험

@@ -1,0 +1,9 @@
+ul {
+  margin-bottom: 0;
+  padding-left: 6px;
+  list-style-position: inside;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}

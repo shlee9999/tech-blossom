@@ -101,10 +101,7 @@ Card.List = function List({
 }) {
   return (
     <ul
-      className={cn(
-        'list-disc pl-5 text-gray-600 dark:text-gray-400 space-y-1 !mb-0 !mt-3',
-        className
-      )}
+      className={cn(' text-gray-600 dark:text-gray-400 space-y-1 ', className)}
     >
       {children}
     </ul>
@@ -156,7 +153,7 @@ Card.Link = function CardLink({
       <Link
         to={to}
         className={cn(
-          '!no-underline text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-400',
+          '!no-underline dark:text-white hover:text-blue-500 dark:hover:text-blue-400',
           className
         )}
       >

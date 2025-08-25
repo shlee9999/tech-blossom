@@ -24,17 +24,15 @@ export default function ProjectCard({
       <Card.Layout>
         <Card.Main>
           <Card.Header>
-            <Card.Link to={`/project/${path}`}>
-              <Card.Title className='text-xl font-bold mb-2'>
-                {title}
-              </Card.Title>
-            </Card.Link>
+            <Card.Title className='text-xl font-bold mb-2'>
+              <Card.Link to={`/project/${path}`}>{title}</Card.Link>
+            </Card.Title>
             <Card.Period className='mb-3'>{period}</Card.Period>
           </Card.Header>
 
           <Card.Content className=''>
             <Card.TechStack>
-              {tech.map((techItem) => (
+              {tech.map(techItem => (
                 <Card.Tag key={techItem}>{techItem}</Card.Tag>
               ))}
             </Card.TechStack>

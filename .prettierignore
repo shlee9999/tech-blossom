@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build outputs
+build/
+.docusaurus/
+dist/
+
+# MDX/Markdown auto-generated files
+**/*.md
+**/*.mdx
+
+# Config files that might have specific formatting
+docusaurus.config.ts
+.docusaurus/
+static/
+
+# Logs
+*.log
+
+# Coverage
+coverage/
+
+# Cache
+.cache/
+.next/
+.nuxt/
+.vuepress/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.temp
