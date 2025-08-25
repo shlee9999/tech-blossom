@@ -12,3 +12,36 @@ ul {
 p:last-child {
   margin-bottom: 0;
 }
+
+/* 삼성 인터넷 호환성을 위한 헤더 텍스트 스타일 */
+.homepage-header h1 {
+  /* 기본 색상 (폴백) */
+  color: #ffffff;
+  /* 그라데이션 텍스트 지원 브라우저용 */
+  background: linear-gradient(135deg, #ffffff 0%, #dbeafe 50%, #e0f2fe 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.homepage-header h2 {
+  /* 기본 색상 (폴백) */
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* 삼성 인터넷에서 그라데이션 텍스트가 지원되지 않을 경우를 위한 대체 스타일 */
+@supports not (-webkit-background-clip: text) {
+  .homepage-header h1 {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: initial !important;
+  }
+}
+
+/* 삼성 인터넷 특정 스타일 */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .homepage-header h1 {
+    /* 삼성 인터넷에서 더 나은 가독성을 위한 그림자 추가 */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+}

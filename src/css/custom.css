@@ -14,6 +14,85 @@
   src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 }
 
+/* Docusaurus 기본 CSS 변수 오버라이드 */
+:root {
+  /* Primary colors - Docusaurus 공식 변수 */
+  --ifm-color-primary: #3b82f6;
+  --ifm-color-primary-dark: #2563eb;
+  --ifm-color-primary-darker: #1d4ed8;
+  --ifm-color-primary-darkest: #1e40af;
+  --ifm-color-primary-light: #60a5fa;
+  --ifm-color-primary-lighter: #93c5fd;
+  --ifm-color-primary-lightest: #dbeafe;
+
+  /* Background colors */
+  --ifm-background-color: #ffffff;
+  --ifm-background-surface-color: #f8f9fa;
+
+  /* Content colors */
+  --ifm-color-content: #1c1e21;
+  --ifm-color-content-secondary: #6a737d;
+
+  /* Emphasis colors */
+  --ifm-color-emphasis-100: #f6f8fa;
+  --ifm-color-emphasis-200: #e1e4e8;
+  --ifm-color-emphasis-300: #d1d5da;
+  --ifm-color-emphasis-400: #959da5;
+  --ifm-color-emphasis-500: #6a737d;
+  --ifm-color-emphasis-600: #586069;
+  --ifm-color-emphasis-700: #444d56;
+  --ifm-color-emphasis-800: #2f363d;
+  --ifm-color-emphasis-900: #24292e;
+
+  /* Code colors */
+  --ifm-code-font-size: 95%;
+  --ifm-color-success: #10b981;
+  --ifm-color-info: #3b82f6;
+  --ifm-color-warning: #f59e0b;
+  --ifm-color-danger: #ef4444;
+
+  /* Highlighted code line */
+  --highlighted-code-line-bg: color-mix(in srgb, black 10%, transparent);
+
+  /* Typography */
+  --ifm-heading-margin-top: 0;
+  --ifm-heading-margin-bottom: 0;
+  --ifm-font-family-base:
+    'Pretendard Variable', 'Pretendard', 'Inter', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+    sans-serif;
+}
+
+/* 다크 모드 CSS 변수 */
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b82f6;
+  --ifm-color-primary-darker: #2563eb;
+  --ifm-color-primary-darkest: #1d4ed8;
+  --ifm-color-primary-light: #93c5fd;
+  --ifm-color-primary-lighter: #dbeafe;
+  --ifm-color-primary-lightest: #eff6ff;
+
+  --ifm-background-color: #1c1e21;
+  --ifm-background-surface-color: #24292e;
+
+  --ifm-color-content: #f6f8fa;
+  --ifm-color-content-secondary: #959da5;
+
+  --ifm-color-emphasis-100: #24292e;
+  --ifm-color-emphasis-200: #2f363d;
+  --ifm-color-emphasis-300: #444d56;
+  --ifm-color-emphasis-400: #586069;
+  --ifm-color-emphasis-500: #6a737d;
+  --ifm-color-emphasis-600: #959da5;
+  --ifm-color-emphasis-700: #d1d5da;
+  --ifm-color-emphasis-800: #e1e4e8;
+  --ifm-color-emphasis-900: #f6f8fa;
+
+  --highlighted-code-line-bg: color-mix(in srgb, white 30%, transparent);
+}
+
+/* 기본 스타일 적용 */
 body,
 h1,
 h2,
@@ -26,31 +105,19 @@ a,
 li,
 blockquote,
 span {
-  font-family:
-    'Pretendard Variable',
-    'Pretendard',
-    'Inter',
-    -apple-system,
-    BlinkMacSystemFont,
-    'Segoe UI',
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    sans-serif !important;
+  font-family: var(--ifm-font-family-base) !important;
   word-break: keep-all;
 }
 
 strong {
-  [data-theme='dark'] & {
-    color: var(--ifm-color-content);
-  }
+  color: var(--ifm-color-content);
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+
   h1,
   h2,
   h3,
@@ -58,36 +125,19 @@ strong {
   h5,
   h6 {
     margin: 0;
-  }
-}
-@layer theme {
-  :root {
-    /* Primary colors */
-    --color-primary: #2e8555;
-    --color-primary-dark: #29784c;
-    --color-primary-darker: #277148;
-    --color-primary-darkest: #205d3b;
-    --color-primary-light: #33925d;
-    --color-primary-lighter: #359962;
-    --color-primary-lightest: #3cad6e;
-
-    /* Other variables */
-    --code-font-size: 95%;
-    --highlighted-code-line-bg: color-mix(in srgb, black 10%, transparent);
-
-    --ifm-heading-margin-top: 0;
-    --ifm-heading-margin-bottom: 0;
+    color: var(--ifm-color-content);
   }
 
-  [data-theme='dark'] {
-    --color-primary: #25c2a0;
-    --color-primary-dark: #21af90;
-    --color-primary-darker: #1fa588;
-    --color-primary-darkest: #1a8870;
-    --color-primary-light: #29d5b0;
-    --color-primary-lighter: #32d8b4;
-    --color-primary-lightest: #4fddbf;
-    --highlighted-code-line-bg: color-mix(in srgb, black 30%, transparent);
+  p {
+    color: var(--ifm-color-content);
+  }
+
+  a {
+    color: var(--ifm-color-primary);
+  }
+
+  a:hover {
+    color: var(--ifm-color-primary-dark);
   }
 }
 
@@ -126,7 +176,11 @@ strong {
 
   /* 그라디언트 텍스트 */
   .text-gradient {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(
+      135deg,
+      var(--ifm-color-primary) 0%,
+      var(--ifm-color-primary-light) 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -219,38 +273,54 @@ strong {
 /* 용어 툴팁 스타일 */
 /* 용어 링크 스타일 */
 .term-link {
-  color: var(--ifm-color-content); /* 일반 텍스트색 */
+  color: var(--ifm-color-content);
   text-decoration: underline;
-  text-decoration-color: #eab308; /* underline만 밝은 노란색 */
+  text-decoration-color: var(--ifm-color-warning);
   text-underline-offset: 5px;
   cursor: default;
   position: relative;
   font-weight: 500;
   padding: 1px 3px;
   border-radius: 3px;
-  background-color: rgba(234, 179, 8, 0.1);
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-color-warning) 10%,
+    transparent
+  );
   transition: all 0.2s ease-in-out;
   transition-duration: 0.1s;
 }
 
 .term-link:hover {
-  color: var(--ifm-color-content); /* 호버시에도 일반 텍스트색 유지 */
+  color: var(--ifm-color-content);
   text-decoration-style: solid;
-  text-decoration-color: #ca8a04; /* 호버시 더 진한 노란색 underline */
-  background-color: rgba(234, 179, 8, 0.15);
+  text-decoration-color: var(--ifm-color-warning);
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-color-warning) 15%,
+    transparent
+  );
 }
 
 /* 다크 모드에서의 용어 링크 */
 [data-theme='dark'] .term-link {
-  color: var(--ifm-color-content); /* 일반 텍스트색 */
-  text-decoration-color: #fbbf24; /* underline만 노란색 */
-  background-color: rgba(234, 179, 8, 0.15);
+  color: var(--ifm-color-content);
+  text-decoration-color: var(--ifm-color-warning);
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-color-warning) 15%,
+    transparent
+  );
 }
 
 [data-theme='dark'] .term-link:hover {
-  color: var(--ifm-color-content); /* 호버시에도 일반 텍스트색 유지 */
-  text-decoration-color: #fcd34d; /* 호버시 더 밝은 노란색 underline */
-  background-color: rgba(234, 179, 8, 0.25);
+  color: var(--ifm-color-content);
+  text-decoration-color: var(--ifm-color-warning);
+  background-color: color-mix(
+    in srgb,
+    var(--ifm-color-warning) 25%,
+    transparent
+  );
 }
 
 /* 툴팁 오버레이 */
@@ -266,8 +336,8 @@ strong {
 
 /* 툴팁 컨테이너 */
 .term-tooltip {
-  background: var(--ifm-background-color, #ffffff);
-  border: 1px solid var(--ifm-color-emphasis-400, #d0d7de);
+  background: var(--ifm-background-color);
+  border: 1px solid var(--ifm-color-emphasis-400);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   max-width: 300px;
@@ -279,8 +349,8 @@ strong {
 
 /* 다크 모드 대응 */
 [data-theme='dark'] .term-tooltip {
-  background: var(--ifm-background-color, #1c1e21);
-  border-color: var(--ifm-color-emphasis-400, #444c56);
+  background: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-400);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -308,15 +378,11 @@ strong {
 .tooltip-content {
   padding: 10px 12px 12px 12px;
   color: var(--ifm-color-content);
-  background-color: var(--ifm-background-color, #ffffff);
+  background-color: var(--ifm-background-color);
   border-radius: 0 0 8px 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-}
-
-[data-theme='dark'] .tooltip-content {
-  background-color: var(--ifm-background-color, #1c1e21);
 }
 
 /* 툴팁 화살표 */
@@ -329,11 +395,7 @@ strong {
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 8px solid var(--ifm-color-emphasis-400, #d0d7de);
-}
-
-[data-theme='dark'] .tooltip-arrow {
-  border-top-color: var(--ifm-color-emphasis-400, #444c56);
+  border-top: 8px solid var(--ifm-color-emphasis-400);
 }
 
 .tooltip-arrow::after {
@@ -345,11 +407,7 @@ strong {
   height: 0;
   border-left: 7px solid transparent;
   border-right: 7px solid transparent;
-  border-top: 7px solid #ffffff;
-}
-
-[data-theme='dark'] .tooltip-arrow::after {
-  border-top-color: #1c1e21;
+  border-top: 7px solid var(--ifm-background-color);
 }
 
 /* 애니메이션 */
