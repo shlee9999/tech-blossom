@@ -186,7 +186,7 @@ Card.Layout = function Layout({
   return (
     <div
       className={cn(
-        'flex flex-col justify-between gap-4 md:flex-row',
+        'flex flex-col justify-between gap-4 lg:flex-row',
         className
       )}
     >
@@ -212,15 +212,20 @@ Card.Thumbnail = function Thumbnail({
   alt,
   className,
   size = '50%',
+  to,
 }: {
   src: string;
   alt: string;
   className?: string;
   size?: string;
+  to?: string;
 }) {
   return (
     <div
-      className={cn('relative', className)}
+      className={cn(
+        'relative transition-transform duration-150 hover:scale-105',
+        className
+      )}
       style={{ paddingTop: size, width: size }}
     >
       <img
@@ -228,9 +233,12 @@ Card.Thumbnail = function Thumbnail({
         alt={alt}
         draggable='false'
         className={cn(
-          'absolute left-0 top-0 h-full w-full select-none object-contain'
+          'absolute left-0 top-0 h-full w-full select-none object-contain transition-transform duration-300'
         )}
       />
+      <Link to={to} className='block'>
+        <div className='absolute -inset-5 box-content'></div>
+      </Link>
     </div>
   );
 };

@@ -55,8 +55,8 @@ export default function ProjectCard({
           </Card.Content>
         </Card.Main>
 
-        <div className='order-first flex flex-[2] items-center justify-center rounded-lg bg-gray-700 md:order-last md:bg-inherit'>
-          <Card.Thumbnail src={thumbnail} alt={title} />
+        <div className='order-first flex flex-[2] items-center justify-center rounded-lg bg-gray-700 lg:order-last lg:bg-inherit'>
+          <Card.Thumbnail src={thumbnail} alt={title} to={`/project/${path}`} />
         </div>
       </Card.Layout>
     </Card>
