@@ -2,7 +2,8 @@ import { ProjectCardProps } from '@site/src/components/ProjectCard';
 
 export const PROJECTS = [
   {
-    title: 'DDang - 반려견 산책 매칭 서비스',
+    title: 'DDang',
+    subTitle: ' 반려견 산책 매칭 서비스',
     period: '2024.11 ~ 2024.12',
     description:
       '반려견 산책 메이트를 매칭해주는 서비스로, 4명의 프론트엔드와 4명의 백엔드 개발자가 참여한 팀 프로젝트',
@@ -29,7 +30,8 @@ export const PROJECTS = [
     thumbnail: '/project/ddang-thumbnail.png',
   },
   {
-    title: 'PlanMate - 학습 관리 플랫폼',
+    title: 'PlanMate',
+    subTitle: '학습 관리 플랫폼',
     period: '2023.05 ~ 2023.08, 2024.01',
     description: '학습 계획 수립과 진도 관리를 돕는 학습 관리 플랫폼',
     tech: [
@@ -54,7 +56,8 @@ export const PROJECTS = [
     thumbnail: '/project/planmate-thumbnail.svg',
   },
   {
-    title: 'TypingPro - 타자 연습 플랫폼',
+    title: 'TypingPro',
+    subTitle: '타자 연습 플랫폼',
     period: '2023.04 ~ 2023.06',
     description: '게임 형식의 타자 연습을 제공하는 웹 애플리케이션',
     tech: ['React', 'JavaScript', 'HTML', 'CSS', 'Context API', 'hangul-js'],

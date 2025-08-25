@@ -208,24 +208,26 @@ Card.Thumbnail = function Thumbnail({
   src,
   alt,
   className,
+  size = '50%',
 }: {
   src: string;
   alt: string;
   className?: string;
+  size?: string;
 }) {
   return (
-    <div className='flex-[2] items-center justify-center hidden lg:flex'>
-      <div className='relative w-[50%]' style={{ paddingTop: '50%' }}>
-        <img
-          src={src}
-          alt={alt}
-          draggable='false'
-          className={cn(
-            'absolute object-contain h-full w-full left-0 top-0 select-none',
-            className
-          )}
-        />
-      </div>
+    <div
+      className={cn('relative', className)}
+      style={{ paddingTop: size, width: size }}
+    >
+      <img
+        src={src}
+        alt={alt}
+        draggable='false'
+        className={cn(
+          'absolute object-contain h-full w-full left-0 top-0 select-none'
+        )}
+      />
     </div>
   );
 };
