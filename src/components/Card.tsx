@@ -151,7 +151,7 @@ Card.Link = function CardLink({
       <Link
         to={to}
         className={cn(
-          '!no-underline hover:text-primary-500 dark:text-white dark:hover:text-primary-400',
+          'cursor-pointer text-primary-600 transition-colors hover:text-primary-700 hover:underline dark:text-primary-400 dark:hover:text-primary-300',
           className
         )}
       >
