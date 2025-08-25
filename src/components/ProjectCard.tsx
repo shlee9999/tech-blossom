@@ -26,12 +26,6 @@ export default function ProjectCard({
       <Card.Layout>
         <Card.Main>
           <Card.Header className='mb-3 flex items-center justify-between gap-3 lg:mb-4'>
-            <Card.Thumbnail
-              src={thumbnail}
-              alt={title}
-              size='3rem'
-              className='sm:!w-18 sm:!h-18 !h-16 !w-16 flex-shrink-0 overflow-hidden rounded-full border border-gray-200 bg-blue-500 !p-5 shadow-sm dark:border-gray-600 lg:hidden'
-            />
             <div className='min-w-0 flex-1'>
               <Card.Title className='mb-1 text-lg font-bold lg:mb-2 lg:text-xl'>
                 <Card.Link to={`/project/${path}`}>{title}</Card.Link>
@@ -61,7 +55,7 @@ export default function ProjectCard({
           </Card.Content>
         </Card.Main>
 
-        <div className='hidden flex-[2] items-center justify-center lg:flex'>
+        <div className='order-first flex flex-[2] items-center justify-center rounded-lg bg-gray-700 md:order-last md:bg-inherit'>
           <Card.Thumbnail src={thumbnail} alt={title} />
         </div>
       </Card.Layout>

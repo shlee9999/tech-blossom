@@ -184,7 +184,12 @@ Card.Layout = function Layout({
   className?: string;
 }) {
   return (
-    <div className={cn('flex justify-between gap-4', className)}>
+    <div
+      className={cn(
+        'flex flex-col justify-between gap-4 md:flex-row',
+        className
+      )}
+    >
       {children}
     </div>
   );
