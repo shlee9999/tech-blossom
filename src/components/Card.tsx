@@ -153,7 +153,7 @@ Card.Link = function CardLink({
       <Link
         to={to}
         className={cn(
-          '!no-underline dark:text-white hover:text-blue-500 dark:hover:text-blue-400',
+          '!no-underline dark:text-white hover:text-primary-500 dark:hover:text-primary-400',
           className
         )}
       >
@@ -166,7 +166,7 @@ Card.Link = function CardLink({
     <a
       href={href}
       className={cn(
-        'text-blue-600 dark:text-blue-400 hover:underline',
+        'text-primary-600 dark:text-primary-400 hover:underline',
         className
       )}
       target={external ? '_blank' : undefined}
@@ -254,7 +254,7 @@ Card.Tag = function Tag({
   return (
     <span
       className={cn(
-        'px-3 py-1 bg-blue-100 dark:bg-blue-800/30 text-blue-800 dark:text-blue-300 rounded-full text-sm',
+        'px-3 py-1 bg-primary-100 dark:bg-primary-800/30 text-primary-800 dark:text-primary-300 rounded-full text-sm',
         className
       )}
     >

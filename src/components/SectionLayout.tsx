@@ -18,7 +18,7 @@ export function SectionLayout({
   return (
     <section className={cn('mb-20', className)}>
       <div className={cn('flex items-center mb-8')}>
-        <Icon className='w-8 h-8 mr-2 text-blue-600 dark:text-blue-400' />
+        <Icon className='w-8 h-8 mr-2 text-primary-600 dark:text-primary-400' />
         <h2
           className={cn('text-3xl font-bold text-gray-800 dark:text-gray-200')}
         >

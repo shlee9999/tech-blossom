@@ -43,7 +43,9 @@ export const TermTooltip: React.FC<TermTooltipProps> = ({
     return () => observer.disconnect();
   }, []);
 
-  const backgroundColor = isDarkMode ? '#1c1e21' : '#ffffff';
+  const backgroundColor = isDarkMode
+    ? 'var(--ifm-background-color)'
+    : 'var(--ifm-background-color)';
 
   // 툴팁 위치 계산 함수
   const updateTooltipPosition = useCallback(() => {
