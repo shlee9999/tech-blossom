@@ -12,8 +12,8 @@ export function Card({ children, className, onClick }: CardProps) {
   return (
     <div
       className={cn(
-        'rounded-2xl shadow-lg overflow-hidden p-6 lg:p-8',
-        'transition-transform hover:scale-[1.02] relative',
+        'overflow-hidden rounded-2xl p-6 shadow-lg lg:p-8',
+        'relative transition-transform hover:scale-[1.02]',
         'bg-white dark:bg-gray-800',
         'border border-gray-200 dark:border-gray-700',
         'shadow-gray-200/50 dark:shadow-gray-900/50',
@@ -82,7 +82,7 @@ Card.Period = function Period({
   return (
     <p
       className={cn(
-        'text-gray-500 dark:text-gray-400 text-sm !mt-0',
+        '!mt-0 text-sm text-gray-500 dark:text-gray-400',
         className
       )}
     >
@@ -100,9 +100,7 @@ Card.List = function List({
   className?: string;
 }) {
   return (
-    <ul
-      className={cn(' text-gray-600 dark:text-gray-400 space-y-1 ', className)}
-    >
+    <ul className={cn('space-y-1 text-gray-600 dark:text-gray-400', className)}>
       {children}
     </ul>
   );
@@ -153,7 +151,7 @@ Card.Link = function CardLink({
       <Link
         to={to}
         className={cn(
-          '!no-underline dark:text-white hover:text-primary-500 dark:hover:text-primary-400',
+          '!no-underline hover:text-primary-500 dark:text-white dark:hover:text-primary-400',
           className
         )}
       >
@@ -166,7 +164,7 @@ Card.Link = function CardLink({
     <a
       href={href}
       className={cn(
-        'text-primary-600 dark:text-primary-400 hover:underline',
+        'text-primary-600 hover:underline dark:text-primary-400',
         className
       )}
       target={external ? '_blank' : undefined}
@@ -186,7 +184,7 @@ Card.Layout = function Layout({
   className?: string;
 }) {
   return (
-    <div className={cn('flex gap-4 justify-between', className)}>
+    <div className={cn('flex justify-between gap-4', className)}>
       {children}
     </div>
   );
@@ -200,7 +198,7 @@ Card.Main = function Main({
   children: ReactNode;
   className?: string;
 }) {
-  return <div className={cn('flex-[3] mb-0', className)}>{children}</div>;
+  return <div className={cn('mb-0 flex-[3]', className)}>{children}</div>;
 };
 
 // 썸네일 영역
@@ -225,7 +223,7 @@ Card.Thumbnail = function Thumbnail({
         alt={alt}
         draggable='false'
         className={cn(
-          'absolute object-contain h-full w-full left-0 top-0 select-none'
+          'absolute left-0 top-0 h-full w-full select-none object-contain'
         )}
       />
     </div>
@@ -241,7 +239,7 @@ Card.TechStack = function TechStack({
   className?: string;
 }) {
   return (
-    <div className={cn('flex flex-wrap gap-2 mb-4', className)}>{children}</div>
+    <div className={cn('mb-4 flex flex-wrap gap-2', className)}>{children}</div>
   );
 };
 
@@ -256,7 +254,7 @@ Card.Tag = function Tag({
   return (
     <span
       className={cn(
-        'px-3 py-1 bg-primary-100 dark:bg-primary-800/30 text-primary-800 dark:text-primary-300 rounded-full text-sm',
+        'rounded-full bg-primary-100 px-3 py-1 text-sm text-primary-800 dark:bg-primary-800/30 dark:text-primary-300',
         className
       )}
     >

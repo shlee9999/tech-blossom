@@ -17,8 +17,8 @@ export function SectionLayout({
 }: SectionLayoutProps) {
   return (
     <section className={cn('mb-20', className)}>
-      <div className={cn('flex items-center mb-8')}>
-        <Icon className='w-8 h-8 mr-2 text-primary-600 dark:text-primary-400' />
+      <div className={cn('mb-8 flex items-center')}>
+        <Icon className='mr-2 h-8 w-8 text-primary-600 dark:text-primary-400' />
         <h2
           className={cn('text-3xl font-bold text-gray-800 dark:text-gray-200')}
         >

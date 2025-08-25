@@ -17,7 +17,7 @@ function HomepageHeader() {
   return (
     <header
       className={cn(
-        'relative min-h-[calc(100vh-var(--ifm-navbar-height))] flex items-center justify-center overflow-hidden',
+        'relative flex min-h-[calc(100vh-var(--ifm-navbar-height))] items-center justify-center overflow-hidden',
         // 더 세련된 다층 그라데이션 배경
         'bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900',
         'before:absolute before:inset-0 before:bg-gradient-to-tr before:from-primary-500/20 before:via-purple-500/30 before:to-warning-500/20',
@@ -40,13 +40,13 @@ function HomepageHeader() {
       {/* 복합 배경 장식 요소들 */}
       <div className='absolute inset-0 overflow-hidden'>
         {/* 주요 오브 효과들 */}
-        <div className='absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-primary-400/30 to-info-400/20 rounded-full blur-3xl animate-pulse'></div>
-        <div className='absolute -bottom-40 -left-40 w-[500px] h-[500px] bg-gradient-to-tr from-purple-400/25 to-warning-400/15 rounded-full blur-3xl animate-pulse delay-1000'></div>
-        <div className='absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-primary-400/20 to-purple-400/15 rounded-full blur-2xl animate-pulse delay-500'></div>
+        <div className='absolute -right-40 -top-40 h-96 w-96 animate-pulse rounded-full bg-gradient-to-br from-primary-400/30 to-info-400/20 blur-3xl'></div>
+        <div className='absolute -bottom-40 -left-40 h-[500px] w-[500px] animate-pulse rounded-full bg-gradient-to-tr from-purple-400/25 to-warning-400/15 blur-3xl delay-1000'></div>
+        <div className='absolute left-20 top-20 h-72 w-72 animate-pulse rounded-full bg-gradient-to-br from-primary-400/20 to-purple-400/15 blur-2xl delay-500'></div>
 
         {/* 회전하는 링 효과 */}
         <div
-          className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px]'
+          className='absolute left-1/2 top-1/2 h-[800px] w-[800px] -translate-x-1/2 -translate-y-1/2'
           style={{ animation: 'rotate-slow 30s linear infinite' }}
         >
           <div className='absolute inset-0 rounded-full border border-white/5'></div>
@@ -56,11 +56,11 @@ function HomepageHeader() {
 
         {/* 움직이는 그라데이션 오브들 */}
         <div
-          className='absolute top-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-success-400/20 to-info-400/10 rounded-full blur-2xl'
+          className='absolute right-1/4 top-1/4 h-64 w-64 rounded-full bg-gradient-to-br from-success-400/20 to-info-400/10 blur-2xl'
           style={{ animation: 'float 15s ease-in-out infinite' }}
         ></div>
         <div
-          className='absolute bottom-1/3 left-1/4 w-80 h-80 bg-gradient-to-tr from-warning-400/15 to-danger-400/10 rounded-full blur-2xl'
+          className='absolute bottom-1/3 left-1/4 h-80 w-80 rounded-full bg-gradient-to-tr from-warning-400/15 to-danger-400/10 blur-2xl'
           style={{ animation: 'float 18s ease-in-out infinite reverse' }}
         ></div>
 
@@ -69,7 +69,7 @@ function HomepageHeader() {
           {Array.from({ length: 20 }).map((_, i) => (
             <div
               key={i}
-              className='absolute w-1 h-1 bg-white rounded-full opacity-30'
+              className='absolute h-1 w-1 rounded-full bg-white opacity-30'
               style={{
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 100}%`,
@@ -84,11 +84,11 @@ function HomepageHeader() {
 
         {/* 빛 줄기 효과 */}
         <div
-          className='absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-white/20 via-transparent to-transparent'
+          className='absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-white/20 via-transparent to-transparent'
           style={{ animation: 'beam-sweep 8s ease-in-out infinite' }}
         ></div>
         <div
-          className='absolute left-0 top-1/2 -translate-y-1/2 h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent'
+          className='absolute left-0 top-1/2 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-white/10 to-transparent'
           style={{
             animation: 'beam-sweep-horizontal 10s ease-in-out infinite',
           }}
@@ -96,14 +96,14 @@ function HomepageHeader() {
       </div>
 
       {/* 메인 콘텐츠 */}
-      <div className={cn('relative z-10 max-w-4xl mx-auto px-6 text-center')}>
+      <div className={cn('relative z-10 mx-auto max-w-4xl px-6 text-center')}>
         {/* 프로필 이미지 영역 */}
         <div className='mb-8 flex justify-center'>
           <div className='relative'>
-            <div className='w-32 h-32 bg-gradient-to-r from-white/20 to-white/10 rounded-full flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-2xl'>
-              <Star className='w-16 h-16 text-white/90' />
+            <div className='flex h-32 w-32 items-center justify-center rounded-full border border-white/20 bg-gradient-to-r from-white/20 to-white/10 shadow-2xl backdrop-blur-sm'>
+              <Star className='h-16 w-16 text-white/90' />
             </div>
-            <div className='absolute inset-0 rounded-full bg-gradient-to-r from-primary-400/50 to-purple-400/50 blur-xl animate-pulse'></div>
+            <div className='absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-primary-400/50 to-purple-400/50 blur-xl'></div>
           </div>
         </div>
 
@@ -111,7 +111,7 @@ function HomepageHeader() {
         <div className='mb-6'>
           <h1
             className={cn(
-              'text-5xl md:text-6xl font-bold text-white mb-4',
+              'mb-4 text-5xl font-bold text-white md:text-6xl',
               'bg-gradient-to-r from-white via-primary-100 to-purple-100 bg-clip-text text-transparent',
               'animate-fade-in-up drop-shadow-lg'
             )}
@@ -120,8 +120,8 @@ function HomepageHeader() {
           </h1>
           <h2
             className={cn(
-              'text-3xl md:text-4xl font-semibold text-white/90 mb-6',
-              'animate-fade-in-up animation-delay-200'
+              'mb-6 text-3xl font-semibold text-white/90 md:text-4xl',
+              'animation-delay-200 animate-fade-in-up'
             )}
           >
             이성훈
@@ -131,15 +131,15 @@ function HomepageHeader() {
         {/* 서브타이틀 */}
         <p
           className={cn(
-            'text-xl md:text-2xl text-white/80 mb-8 leading-relaxed',
-            'animate-fade-in-up animation-delay-400',
-            'max-w-2xl mx-auto'
+            'mb-8 text-xl leading-relaxed text-white/80 md:text-2xl',
+            'animation-delay-400 animate-fade-in-up',
+            'mx-auto max-w-2xl'
           )}
         >
           <span>사용자 경험을 중시하는</span>{' '}
           <span className='whitespace-pre'>열정적인 웹 개발자</span>
           <br />
-          <span className='text-lg text-white/70 whitespace-nowrap'>
+          <span className='whitespace-nowrap text-lg text-white/70'>
             React • TypeScript • 사용자 중심 설계
           </span>
         </p>
@@ -147,34 +147,34 @@ function HomepageHeader() {
         {/* 버튼 그룹 */}
         <div
           className={cn(
-            'flex flex-col sm:flex-row justify-center items-center gap-4',
-            'animate-fade-in-up animation-delay-600'
+            'flex flex-col items-center justify-center gap-4 sm:flex-row',
+            'animation-delay-600 animate-fade-in-up'
           )}
         >
           <a
             href='#main'
             className={cn(
-              'group px-8 py-4 bg-primary-600 rounded-full !no-underline',
-              '!text-white hover:bg-primary-700 transition-all duration-300',
+              'group rounded-full bg-primary-600 px-8 py-4 !no-underline',
+              '!text-white transition-all duration-300 hover:bg-primary-700',
               'flex items-center gap-3 text-lg font-medium',
               'border-2 border-primary-500'
             )}
           >
-            <BookOpen className='w-5 h-5 group-hover:scale-110 transition-transform duration-300' />
+            <BookOpen className='h-5 w-5 transition-transform duration-300 group-hover:scale-110' />
             포트폴리오 보기
           </a>
           <a
             href='https://github.com/shlee9999'
             className={cn(
-              'group px-8 py-4 bg-white/15 rounded-full !no-underline backdrop-blur-sm',
-              '!text-white hover:bg-white/25 transition-all duration-300',
+              'group rounded-full bg-white/15 px-8 py-4 !no-underline backdrop-blur-sm',
+              '!text-white transition-all duration-300 hover:bg-white/25',
               'flex items-center gap-3 text-lg font-medium',
               'border border-white/20'
             )}
             target='_blank'
           >
             <svg
-              className='w-6 h-6 group-hover:scale-110 transition-transform duration-300 fill-current'
+              className='h-6 w-6 fill-current transition-transform duration-300 group-hover:scale-110'
               viewBox='0 0 24 24'
               fill='currentColor'
             >
@@ -202,7 +202,7 @@ export default function HomePage(): ReactNode {
       <main
         id='main'
         className={cn(
-          'py-16 px-4 max-w-7xl mx-auto text-gray-900 dark:text-gray-100'
+          'mx-auto max-w-7xl px-4 py-16 text-gray-900 dark:text-gray-100'
         )}
       >
         {/* 소개 섹션 */}
@@ -212,7 +212,7 @@ export default function HomePage(): ReactNode {
             <div className={cn('text-center')}>
               <h2
                 className={cn(
-                  'font-bold text-2xl text-gray-800 dark:text-gray-200 mb-2'
+                  'mb-2 text-2xl font-bold text-gray-800 dark:text-gray-200'
                 )}
               >
                 👋 안녕하세요, 프론트엔드 개발자 이성훈입니다.
@@ -224,17 +224,17 @@ export default function HomePage(): ReactNode {
             {/* 현재 업무 */}
             <div
               className={cn(
-                'bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg border-l-4 border-primary-400 dark:border-primary-500'
+                'rounded-lg border-l-4 border-primary-400 bg-primary-50 p-6 dark:border-primary-500 dark:bg-primary-900/20'
               )}
             >
               <h3
                 className={cn(
-                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  'mb-3 text-lg font-semibold text-gray-800 dark:text-gray-200'
                 )}
               >
                 🏢 현재 업무
               </h3>
-              <p className={cn('text-gray-700 dark:text-gray-300 mb-3')}>
+              <p className={cn('mb-3 text-gray-700 dark:text-gray-300')}>
                 <strong
                   className={cn('text-primary-600 dark:text-primary-400')}
                 >
@@ -277,12 +277,12 @@ export default function HomePage(): ReactNode {
             {/* 오픈소스 기여 */}
             <div
               className={cn(
-                'bg-success-50 dark:bg-success-900/20 p-6 rounded-lg border-l-4 border-success-400 dark:border-success-500'
+                'rounded-lg border-l-4 border-success-400 bg-success-50 p-6 dark:border-success-500 dark:bg-success-900/20'
               )}
             >
               <h3
                 className={cn(
-                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  'mb-3 text-lg font-semibold text-gray-800 dark:text-gray-200'
                 )}
               >
                 🚀 오픈소스 기여
@@ -292,7 +292,7 @@ export default function HomePage(): ReactNode {
                   href='https://www.npmjs.com/package/react-useful-kit'
                   target='_blank'
                   className={cn(
-                    'text-green-600 dark:text-green-400 font-semibold underline hover:text-green-700 dark:hover:text-green-300'
+                    'font-semibold text-green-600 underline hover:text-green-700 dark:text-green-400 dark:hover:text-green-300'
                   )}
                   rel='noreferrer'
                 >
@@ -305,12 +305,12 @@ export default function HomePage(): ReactNode {
             {/* 기술적 전문성 */}
             <div
               className={cn(
-                'bg-primary-50 dark:bg-primary-900/20 p-6 rounded-lg border-l-4 border-primary-400 dark:border-primary-500'
+                'rounded-lg border-l-4 border-primary-400 bg-primary-50 p-6 dark:border-primary-500 dark:bg-primary-900/20'
               )}
             >
               <h3
                 className={cn(
-                  'font-semibold text-lg text-gray-800 dark:text-gray-200 mb-3'
+                  'mb-3 text-lg font-semibold text-gray-800 dark:text-gray-200'
                 )}
               >
                 💻 기술적 전문성
@@ -361,7 +361,7 @@ export default function HomePage(): ReactNode {
 
         {/* 교육 섹션 */}
         <SectionLayout title='Education' icon={GraduationCap}>
-          <div className={cn('grid md:grid-cols-2 gap-6')}>
+          <div className={cn('grid gap-6 md:grid-cols-2')}>
             {EDUCATIONS.map((education, idx) => (
               <Card key={idx}>
                 <Card.Title>{education.title}</Card.Title>
@@ -378,7 +378,7 @@ export default function HomePage(): ReactNode {
 
         {/* 수상 경력 섹션 */}
         <SectionLayout title='Awards' icon={Award}>
-          <div className={cn('grid md:grid-cols-2 gap-6')}>
+          <div className={cn('grid gap-6 md:grid-cols-2')}>
             {AWARDS.map((award, idx) => (
               <Card key={idx}>
                 <Card.Title>{award.title}</Card.Title>
