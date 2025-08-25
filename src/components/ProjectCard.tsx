@@ -37,7 +37,7 @@ export default function ProjectCard({
               ))}
             </Card.TechStack>
 
-            <Card.List className='list-inside'>
+            <Card.List>
               {contribution.map((item, i) => (
                 <Card.Item key={i}>{item}</Card.Item>
               ))}
