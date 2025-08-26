@@ -1,8 +1,8 @@
 import { FolderOpen } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { SectionLayout } from './SectionLayout';
+import { SectionLayout } from '../layout/SectionLayout';
 import { PROJECTS } from '../data/projects';
-import ProjectCard from './ProjectCard';
+import ProjectCard from '../ui/ProjectCard';
 
 export const ProjectsSection = () => {
   return (

@@ -1,6 +1,6 @@
 import { Star } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { SectionLayout } from './SectionLayout';
+import { SectionLayout } from '../layout/SectionLayout';
 import { introData } from '../data/intro';
 
 // 인사말 컴포넌트

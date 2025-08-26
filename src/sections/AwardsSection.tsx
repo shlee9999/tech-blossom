@@ -1,7 +1,7 @@
 import { Award } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { SectionLayout } from './SectionLayout';
-import { Card } from './Card';
+import { SectionLayout } from '../layout/SectionLayout';
+import { Card } from '../ui/Card';
 import { AWARDS } from '../data/awards';
 
 export const AwardsSection = () => {

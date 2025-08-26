@@ -1,7 +1,7 @@
 import { GraduationCap } from 'lucide-react';
 import { cn } from '../utils/cn';
-import { SectionLayout } from './SectionLayout';
-import { Card } from './Card';
+import { SectionLayout } from '../layout/SectionLayout';
+import { Card } from '../ui/Card';
 import { EDUCATIONS } from '../data/educations';
 
 export const EducationSection = () => {
