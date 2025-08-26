@@ -1,4 +1,4 @@
-import { ProjectCardProps } from '@site/src/components/ProjectCard';
+import { ProjectCardProps } from '@site/src/ui/ProjectCard';
 
 export const PROJECTS = [
   {

@@ -1,4 +1,4 @@
-import { Card } from '@site/src/components/Card';
+import { Card } from '@site/src/ui/Card';
 
 export interface ProjectCardProps {
   path: string;
