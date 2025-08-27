@@ -23,9 +23,9 @@ const Button = ({ text, className }: { text: string; className?: string }) => (
 
 <!-- truncate -->
 
-## <TermTooltip termId="cn">cn</TermTooltip>
+## cn
 
-<TermTooltip termId="cn">cn</TermTooltip>은 classNames의 약자이며 주로 다음과 같이 작성한다.
+cn은 classNames의 약자이며 주로 다음과 같이 작성한다.
 
 ```
 //cn.ts

@@ -10,11 +10,11 @@ JavaScript는 동적 타입 언어로 함수 오버로딩을 직접 지원하지
 ## 기본 구조
 
 ```ts
-// 오버로드 <TermTooltip termId="function_signature">시그니처</TermTooltip>
+// 오버로드 시그니처
 function 함수명(매개변수1: 타입): 반환타입;
 function 함수명(매개변수2: 타입): 반환타입;
 
-// 구현 <TermTooltip termId="function_signature">시그니처</TermTooltip> (실제 함수 구현)
+// 구현 시그니처 (실제 함수 구현)
 function 함수명(매개변수: 유니온타입): 반환타입 {...}
 ```
 
@@ -79,7 +79,7 @@ func(["hello", "world"]); // function func(values: string[]): string[]
 
 ### 1. 오버로드 순서 중요성
 
-TypeScript가 호출 장소에서 함수 <TermTooltip termId="function_signature">시그니처</TermTooltip>를 위에서부터 순서대로 검사하므로, 반드시 **구체적인 타입이 위로 가도록** 해야합니다.
+TypeScript가 호출 장소에서 함수 시그니처를 위에서부터 순서대로 검사하므로, 반드시 **구체적인 타입이 위로 가도록** 해야합니다.
 
 ```ts
 // 잘못된 순서 - 더 구체적인 타입이 먼저 와야 함
@@ -110,7 +110,7 @@ good(true); // function good(x: any): any
 ### 2. 구현 시그니처의 호환성
 
 ```ts
-// 모든 오버로드 <TermTooltip termId="function_signature">시그니처</TermTooltip>는 구현 <TermTooltip termId="function_signature">시그니처</TermTooltip>와 호환되어야 함
+// 모든 오버로드 시그니처는 구현 시그니처와 호환되어야 함
 function example(x: string): string;
 function example(x: number): number;
 function example(x: string | number): string | number {
