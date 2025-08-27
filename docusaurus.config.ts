@@ -111,7 +111,7 @@ const config: Config = {
     image: "img/logo.svg",
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
     },
     navbar: {
       title: "Seonghoon's Tech Blossom",
