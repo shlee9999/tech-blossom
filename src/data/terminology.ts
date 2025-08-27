@@ -3,7 +3,7 @@ export interface TerminologyItem {
   title: string;
   hoverText: string;
   path: string;
-  category: 'typescript' | 'css';
+  category: 'typescript' | 'css' | 'web';
 }
 
 export const terminologyData: TerminologyItem[] = [
@@ -38,6 +38,14 @@ export const terminologyData: TerminologyItem[] = [
       'Tailwind CSS 클래스명을 조건부로 결합하고 중복을 처리하는 유틸리티 함수',
     path: '/terminology/css/Tailwind/cn',
     category: 'css',
+  },
+  {
+    id: 'server_template',
+    title: '서버 템플릿',
+    hoverText:
+      '서버 사이드에서 동적으로 HTML을 생성하기 위해 사용되는 템플릿 엔진 기술',
+    path: '/terminology/web/server_template',
+    category: 'web',
   },
 ];
 
